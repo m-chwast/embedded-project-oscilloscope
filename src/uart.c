@@ -5,6 +5,7 @@
 #include "Driver_USART.h"               // ::CMSIS Driver:USART
 #include <string.h>
 #include <stdio.h>
+#include "uart.h"
 
 void UART_Send(const char * txt) {
 	const char* c = txt;
@@ -92,3 +93,27 @@ void InilializeUsart(ARM_DRIVER_USART** UsartWrapper, ARM_DRIVER_USART* Usart)
 	(*UsartWrapper)->Control (ARM_USART_CONTROL_RX, 1);
 }
 
+// Unpluged
+
+extern ARM_DRIVER_USART Driver_USART0;
+extern ARM_DRIVER_USART Driver_USART2;
+//static ARM_DRIVER_USART* USARTdrv0;
+//static ARM_DRIVER_USART* USARTdrv2;
+
+void UART_ReadTask(char* buff, int* buffsize) {
+	if((LPC_UART0->LSR & (0b1 << 0)) == 1) {
+	char rbr = LPC_UART0->RBR;
+	if(rbr == '\r') {
+		buff[*buffsize] = '\r';
+		buff[*buffsize + 1] = '\n';
+		buff[*buffsize + 2] = 0;
+		UART_Send(buff);
+		*buffsize = 0;
+	}
+	else
+	{
+		buff[*buffsize] = rbr;
+	}
+		(*buffsize)++;
+	}
+}

@@ -52,44 +52,29 @@ Section Cross References
     uart.o(i.InilializeUsart) refers to uart.o(i.ARM_USART_eventFunc) for ARM_USART_eventFunc
     uart.o(i.UART_Init) refers to pin_lpc17xx.o(i.PIN_Configure) for PIN_Configure
     uart.o(i.UART_Init) refers to uart.o(i.UART_Send) for UART_Send
+    uart.o(i.UART_ReadTask) refers to uart.o(i.UART_Send) for UART_Send
     uart.o(i.UART_SendNum) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
     uart.o(i.UART_SendNum) refers to _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) for _printf_d
     uart.o(i.UART_SendNum) refers to _printf_dec.o(.text) for _printf_int_dec
     uart.o(i.UART_SendNum) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
     uart.o(i.UART_SendNum) refers to noretval__2sprintf.o(.text) for __2sprintf
     uart.o(i.UART_SendNum) refers to uart.o(i.UART_Send) for UART_Send
-    main.o(i.EINT0_IRQHandler) refers to uart.o(i.UART_Send) for UART_Send
-    main.o(i.EINT0_IRQHandler) refers to main.o(.data) for sysTicks
     main.o(i.EINT3_IRQHandler) refers to uart.o(i.UART_Send) for UART_Send
     main.o(i.EINT3_IRQHandler) refers to main.o(.data) for sysTicks
     main.o(i.GPIO_Init) refers to pin_lpc17xx.o(i.PIN_Configure) for PIN_Configure
     main.o(i.GPIO_Init) refers to main.o(i.__NVIC_EnableIRQ) for __NVIC_EnableIRQ
-    main.o(i.KEY2_Init) refers to pin_lpc17xx.o(i.PIN_Configure) for PIN_Configure
-    main.o(i.KEY2_Init) refers to main.o(i.__NVIC_EnableIRQ) for __NVIC_EnableIRQ
-    main.o(i.OnClikcTask) refers to main.o(.data) for buttonClicked
-    main.o(i.RTC_IRQHandler) refers to uart.o(i.UART_Send) for UART_Send
     main.o(i.RTC_IRQHandler) refers to main.o(.data) for flag
     main.o(i.RTC_Init) refers to main.o(i.__NVIC_EnableIRQ) for __NVIC_EnableIRQ
     main.o(i.SysTick_Handler) refers to main.o(.data) for sysTicks
-    main.o(i.TIMER0_IRQHandler) refers to uart.o(i.UART_Send) for UART_Send
+    main.o(i.TIMER0_IRQHandler) refers to adc.o(i.ADC_StartConvertion) for ADC_StartConvertion
     main.o(i.Timer_Init) refers to main.o(i.__NVIC_EnableIRQ) for __NVIC_EnableIRQ
-    main.o(i.UART_ReadTask) refers to uart.o(i.UART_Send) for UART_Send
-    main.o(i.delay) refers to main.o(.data) for sysTicks
     main.o(i.main) refers to uart.o(i.UART_Init) for UART_Init
-    main.o(i.main) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
+    main.o(i.main) refers to uart.o(i.UART_Send) for UART_Send
     main.o(i.main) refers to main.o(i.Timer_Init) for Timer_Init
     main.o(i.main) refers to main.o(i.RTC_Init) for RTC_Init
     main.o(i.main) refers to main.o(i.GPIO_Init) for GPIO_Init
-    main.o(i.main) refers to main.o(i.KEY2_Init) for KEY2_Init
     main.o(i.main) refers to lcd.o(i.initLCD) for initLCD
-    main.o(i.main) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
-    main.o(i.main) refers to lcd.o(i.drawRectangle) for drawRectangle
-    main.o(i.main) refers to lcd.o(i.drawText) for drawText
-    main.o(i.main) refers to lcd.o(i.drawTextNoBg) for drawTextNoBg
-    main.o(i.main) refers to lcd.o(i.drawLine) for drawLine
-    main.o(i.main) refers to main.o(i.UART_ReadTask) for UART_ReadTask
-    main.o(i.main) refers to main.o(i.OnClikcTask) for OnClikcTask
-    main.o(i.main) refers to main.o(.constdata) for .constdata
+    main.o(i.main) refers to adc.o(i.initADC) for initADC
     open1768_lcd.o(i.lcdRead) refers to open1768_lcd.o(i.wait_delay) for wait_delay
     open1768_lcd.o(i.lcdReadData) refers to open1768_lcd.o(i.wait_delay) for wait_delay
     open1768_lcd.o(i.lcdReadData) refers to open1768_lcd.o(i.lcdRead) for lcdRead
@@ -102,6 +87,16 @@ Section Cross References
     open1768_lcd.o(i.lcdWriteIndex) refers to open1768_lcd.o(i.wait_delay) for wait_delay
     open1768_lcd.o(i.lcdWriteReg) refers to open1768_lcd.o(i.lcdWriteIndex) for lcdWriteIndex
     open1768_lcd.o(i.lcdWriteReg) refers to open1768_lcd.o(i.lcdWriteData) for lcdWriteData
+    buttons.o(i.EINT0_IRQHandler) refers to uart.o(i.UART_Send) for UART_Send
+    buttons.o(i.EINT0_IRQHandler) refers to main.o(.data) for sysTicks
+    buttons.o(i.EINT0_IRQHandler) refers to buttons.o(.data) for lastInt
+    buttons.o(i.KEY2_Init) refers to pin_lpc17xx.o(i.PIN_Configure) for PIN_Configure
+    buttons.o(i.OnClikcTask) refers to buttons.o(.data) for buttonClicked
+    buttons.o(i.OnClikcTask) refers to main.o(.data) for sysTicks
+    adc.o(i.ADC_IRQHandler) refers to uart.o(i.UART_SendNum) for UART_SendNum
+    adc.o(i.ADC_IRQHandler) refers to uart.o(i.UART_Send) for UART_Send
+    adc.o(i.initADC) refers to pin_lpc17xx.o(i.PIN_Configure) for PIN_Configure
+    adc.o(i.initADC) refers to adc.o(i.ADC_StartConvertion) for ADC_StartConvertion
     ssp_lpc17xx.o(i.GetSSPClockFreq) refers to system_lpc17xx.o(.data) for SystemCoreClock
     ssp_lpc17xx.o(i.SSP0_Control) refers to ssp_lpc17xx.o(i.SSPx_Control) for SSPx_Control
     ssp_lpc17xx.o(i.SSP0_Control) refers to ssp_lpc17xx.o(.constdata) for SSP0_Resources
@@ -266,8 +261,9 @@ Section Cross References
     startup_lpc17xx.o(RESET) refers to uart_lpc17xx.o(i.UART0_IRQHandler) for UART0_IRQHandler
     startup_lpc17xx.o(RESET) refers to ssp_lpc17xx.o(i.SSP0_IRQHandler) for SSP0_IRQHandler
     startup_lpc17xx.o(RESET) refers to main.o(i.RTC_IRQHandler) for RTC_IRQHandler
-    startup_lpc17xx.o(RESET) refers to main.o(i.EINT0_IRQHandler) for EINT0_IRQHandler
+    startup_lpc17xx.o(RESET) refers to buttons.o(i.EINT0_IRQHandler) for EINT0_IRQHandler
     startup_lpc17xx.o(RESET) refers to main.o(i.EINT3_IRQHandler) for EINT3_IRQHandler
+    startup_lpc17xx.o(RESET) refers to adc.o(i.ADC_IRQHandler) for ADC_IRQHandler
     startup_lpc17xx.o(RESET) refers to gpdma_lpc17xx.o(i.DMA_IRQHandler) for DMA_IRQHandler
     startup_lpc17xx.o(.ARM.__at_0x02FC) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
     startup_lpc17xx.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
@@ -466,11 +462,17 @@ Section Cross References
 
 Removing Unused input sections from the image.
 
+    Removing asciilib.o(i.GetASCIICode), (44 bytes).
+    Removing asciilib.o(.constdata), (3040 bytes).
     Removing lcd.o(.rev16_text), (4 bytes).
     Removing lcd.o(.revsh_text), (4 bytes).
     Removing lcd.o(.rrx_text), (6 bytes).
     Removing lcd.o(i.RGBto565), (20 bytes).
     Removing lcd.o(i.drawBackGround), (56 bytes).
+    Removing lcd.o(i.drawLine), (220 bytes).
+    Removing lcd.o(i.drawRectangle), (118 bytes).
+    Removing lcd.o(i.drawText), (168 bytes).
+    Removing lcd.o(i.drawTextNoBg), (150 bytes).
     Removing lcd.o(.data), (8 bytes).
     Removing lcd_ili9325.o(.rev16_text), (4 bytes).
     Removing lcd_ili9325.o(.revsh_text), (4 bytes).
@@ -481,14 +483,22 @@ Removing Unused input sections from the image.
     Removing uart.o(i.ARM_USART_eventFunc), (2 bytes).
     Removing uart.o(i.InilializeUsart), (64 bytes).
     Removing uart.o(i.UART_IRQHandler), (24 bytes).
+    Removing uart.o(i.UART_ReadTask), (76 bytes).
     Removing main.o(.rev16_text), (4 bytes).
     Removing main.o(.revsh_text), (4 bytes).
     Removing main.o(.rrx_text), (6 bytes).
-    Removing main.o(i.delay), (24 bytes).
     Removing open1768_lcd.o(.rev16_text), (4 bytes).
     Removing open1768_lcd.o(.revsh_text), (4 bytes).
     Removing open1768_lcd.o(.rrx_text), (6 bytes).
     Removing open1768_lcd.o(i.lcdSetCursor), (24 bytes).
+    Removing buttons.o(.rev16_text), (4 bytes).
+    Removing buttons.o(.revsh_text), (4 bytes).
+    Removing buttons.o(.rrx_text), (6 bytes).
+    Removing buttons.o(i.KEY2_Init), (108 bytes).
+    Removing buttons.o(i.OnClikcTask), (132 bytes).
+    Removing adc.o(.rev16_text), (4 bytes).
+    Removing adc.o(.revsh_text), (4 bytes).
+    Removing adc.o(.rrx_text), (6 bytes).
     Removing ssp_lpc17xx.o(.rev16_text), (4 bytes).
     Removing ssp_lpc17xx.o(.revsh_text), (4 bytes).
     Removing ssp_lpc17xx.o(.rrx_text), (6 bytes).
@@ -517,7 +527,7 @@ Removing Unused input sections from the image.
     Removing system_lpc17xx.o(.rrx_text), (6 bytes).
     Removing system_lpc17xx.o(i.SystemCoreClockUpdate), (424 bytes).
 
-50 unused section(s) (total 1096 bytes) removed from the image.
+64 unused section(s) (total 5156 bytes) removed from the image.
 
 ==============================================================================
 
@@ -528,86 +538,86 @@ Image Symbol Table
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
     RESET                                    0x00000000   Section      204  startup_lpc17xx.o(RESET)
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
-    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
-    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_copy.o ABSOLUTE
     ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_zi.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
+    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_copy.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry2.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry4.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  rt_div0.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_ldiv0_sigfpe.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_ldiv0.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_ldiv0.o ABSOLUTE
     ../clib/angel/scatter.s                  0x00000000   Number         0  __scatter.o ABSOLUTE
     ../clib/angel/startup.s                  0x00000000   Number         0  __main.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
-    ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
     ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
     ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
     ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
-    ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
     ../clib/heapalloc.c                      0x00000000   Number         0  hrguard.o ABSOLUTE
     ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
-    ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
-    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
     ../clib/longlong.s                       0x00000000   Number         0  lludivv7m.o ABSOLUTE
-    ../clib/memcpset.s                       0x00000000   Number         0  rt_memclr_w.o ABSOLUTE
     ../clib/memcpset.s                       0x00000000   Number         0  rt_memcpy_w.o ABSOLUTE
+    ../clib/memcpset.s                       0x00000000   Number         0  rt_memclr_w.o ABSOLUTE
     ../clib/memcpset.s                       0x00000000   Number         0  rt_memcpy_v6.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_ss_wp.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_nopercent.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_intcommon.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_char_common.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  _sputc.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_hex_ll_ptr.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  __2sprintf.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  noretval__2sprintf.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  __printf.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  _printf_dec.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_hex_ll.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  _printf_hex_int.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  _printf_hex_int_ll.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  _printf_hex_ptr.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  _printf_hex_int_ptr.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_hex_ll_ptr.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  _printf_hex_int_ll_ptr.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  __printf_flags.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  __printf_ss.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_flags_ss.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_hex_ll.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  __printf_wp.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  __printf_flags_wp.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_ss_wp.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  __printf_flags_ss_wp.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_d.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_percent_end.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_nopercent.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_flags_ss.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_intcommon.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_char_common.o ABSOLUTE
     ../clib/printf_percent.s                 0x00000000   Number         0  _printf_percent.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_d.o ABSOLUTE
     ../clib/printf_percent.s                 0x00000000   Number         0  _printf_x.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_formal.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_percent_end.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
     ../clib/signal.s                         0x00000000   Number         0  defsig.o ABSOLUTE
     ../clib/stdlib.c                         0x00000000   Number         0  exit.o ABSOLUTE
     ../fplib/d2f.s                           0x00000000   Number         0  d2f.o ABSOLUTE
@@ -639,14 +649,18 @@ Image Symbol Table
     RTE\Device\LPC1768\system_LPC17xx.c      0x00000000   Number         0  system_lpc17xx.o ABSOLUTE
     RTE\\Device\\LPC1768\\system_LPC17xx.c   0x00000000   Number         0  system_lpc17xx.o ABSOLUTE
     dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    src\ADC.c                                0x00000000   Number         0  adc.o ABSOLUTE
     src\LCD_ILI9325.c                        0x00000000   Number         0  lcd_ili9325.o ABSOLUTE
     src\Open1768_LCD.c                       0x00000000   Number         0  open1768_lcd.o ABSOLUTE
+    src\\ADC.c                               0x00000000   Number         0  adc.o ABSOLUTE
     src\\LCD_ILI9325.c                       0x00000000   Number         0  lcd_ili9325.o ABSOLUTE
     src\\Open1768_LCD.c                      0x00000000   Number         0  open1768_lcd.o ABSOLUTE
+    src\\buttons.c                           0x00000000   Number         0  buttons.o ABSOLUTE
     src\\lcd.c                               0x00000000   Number         0  lcd.o ABSOLUTE
     src\\main.c                              0x00000000   Number         0  main.o ABSOLUTE
     src\\uart.c                              0x00000000   Number         0  uart.o ABSOLUTE
     src\asciiLib.c                           0x00000000   Number         0  asciilib.o ABSOLUTE
+    src\buttons.c                            0x00000000   Number         0  buttons.o ABSOLUTE
     src\lcd.c                                0x00000000   Number         0  lcd.o ABSOLUTE
     src\main.c                               0x00000000   Number         0  main.o ABSOLUTE
     src\uart.c                               0x00000000   Number         0  uart.o ABSOLUTE
@@ -708,254 +722,227 @@ Image Symbol Table
     .text                                    0x000002f0   Section        8  libspace.o(.text)
     .text                                    0x000002f8   Section        2  use_no_semi.o(.text)
     .text                                    0x000002fa   Section        0  indicate_semi.o(.text)
-    x$fpl$usenofp                            0x000002fa   Section        0  usenofp.o(x$fpl$usenofp)
     .ARM.__at_0x02FC                         0x000002fc   Section        4  startup_lpc17xx.o(.ARM.__at_0x02FC)
     .text                                    0x00000300   Section        0  __printf.o(.text)
     .text                                    0x00000368   Section        0  _printf_dec.o(.text)
     .text                                    0x000003e0   Section        0  _printf_hex_int.o(.text)
-    .text                                    0x00000438   Section      138  rt_memcpy_v6.o(.text)
-    .text                                    0x000004c2   Section      100  rt_memcpy_w.o(.text)
-    .text                                    0x00000526   Section       78  rt_memclr_w.o(.text)
-    .text                                    0x00000574   Section        0  _printf_intcommon.o(.text)
-    .text                                    0x00000628   Section        0  _printf_char_common.o(.text)
-    _printf_input_char                       0x00000629   Thumb Code    10  _printf_char_common.o(.text)
-    .text                                    0x00000658   Section       74  sys_stackheap_outer.o(.text)
-    .text                                    0x000006a4   Section        0  sys_exit.o(.text)
-    i.Clear_Channel_active_flag              0x000006b0   Section        0  gpdma_lpc17xx.o(i.Clear_Channel_active_flag)
-    Clear_Channel_active_flag                0x000006b1   Thumb Code    28  gpdma_lpc17xx.o(i.Clear_Channel_active_flag)
-    i.DMA_IRQHandler                         0x000006d0   Section        0  gpdma_lpc17xx.o(i.DMA_IRQHandler)
-    i.EINT0_IRQHandler                       0x00000850   Section        0  main.o(i.EINT0_IRQHandler)
-    i.EINT3_IRQHandler                       0x000008c0   Section        0  main.o(i.EINT3_IRQHandler)
-    i.GPDMA_ChannelConfigure                 0x00000914   Section        0  gpdma_lpc17xx.o(i.GPDMA_ChannelConfigure)
-    i.GPDMA_ChannelDisable                   0x00000a08   Section        0  gpdma_lpc17xx.o(i.GPDMA_ChannelDisable)
-    i.GPDMA_ChannelGetCount                  0x00000a38   Section        0  gpdma_lpc17xx.o(i.GPDMA_ChannelGetCount)
-    i.GPDMA_Initialize                       0x00000a68   Section        0  gpdma_lpc17xx.o(i.GPDMA_Initialize)
-    i.GPDMA_PeripheralSelect                 0x00000b10   Section        0  gpdma_lpc17xx.o(i.GPDMA_PeripheralSelect)
-    i.GPDMA_Uninitialize                     0x00000b54   Section        0  gpdma_lpc17xx.o(i.GPDMA_Uninitialize)
-    i.GPIO_Init                              0x00000bd4   Section        0  main.o(i.GPIO_Init)
-    i.GPIO_PinWrite                          0x00000bf8   Section        0  gpio_lpc17xx.o(i.GPIO_PinWrite)
-    i.GPIO_SetDir                            0x00000c20   Section        0  gpio_lpc17xx.o(i.GPIO_SetDir)
-    i.GetASCIICode                           0x00000c58   Section        0  asciilib.o(i.GetASCIICode)
-    i.GetSSPClockFreq                        0x00000c84   Section        0  ssp_lpc17xx.o(i.GetSSPClockFreq)
-    GetSSPClockFreq                          0x00000c85   Thumb Code    64  ssp_lpc17xx.o(i.GetSSPClockFreq)
-    i.GetUsartClockFreq                      0x00000cc8   Section        0  uart_lpc17xx.o(i.GetUsartClockFreq)
-    GetUsartClockFreq                        0x00000cc9   Thumb Code    62  uart_lpc17xx.o(i.GetUsartClockFreq)
-    i.KEY2_Init                              0x00000d0c   Section        0  main.o(i.KEY2_Init)
-    i.OnClikcTask                            0x00000d64   Section        0  main.o(i.OnClikcTask)
-    i.PIN_Configure                          0x00000de4   Section        0  pin_lpc17xx.o(i.PIN_Configure)
-    i.RTC_IRQHandler                         0x00000ee0   Section        0  main.o(i.RTC_IRQHandler)
-    i.RTC_Init                               0x00000f24   Section        0  main.o(i.RTC_Init)
-    i.SSP0_Control                           0x00000f3c   Section        0  ssp_lpc17xx.o(i.SSP0_Control)
-    SSP0_Control                             0x00000f3d   Thumb Code    18  ssp_lpc17xx.o(i.SSP0_Control)
-    i.SSP0_GPDMA_Rx_SignalEvent              0x00000f54   Section        0  ssp_lpc17xx.o(i.SSP0_GPDMA_Rx_SignalEvent)
-    i.SSP0_GPDMA_Tx_SignalEvent              0x00000f68   Section        0  ssp_lpc17xx.o(i.SSP0_GPDMA_Tx_SignalEvent)
-    i.SSP0_GetDataCount                      0x00000f7c   Section        0  ssp_lpc17xx.o(i.SSP0_GetDataCount)
-    SSP0_GetDataCount                        0x00000f7d   Thumb Code    10  ssp_lpc17xx.o(i.SSP0_GetDataCount)
-    i.SSP0_GetStatus                         0x00000f8c   Section        0  ssp_lpc17xx.o(i.SSP0_GetStatus)
-    SSP0_GetStatus                           0x00000f8d   Thumb Code    12  ssp_lpc17xx.o(i.SSP0_GetStatus)
-    i.SSP0_IRQHandler                        0x00000f9c   Section        0  ssp_lpc17xx.o(i.SSP0_IRQHandler)
-    i.SSP0_Initialize                        0x00000fac   Section        0  ssp_lpc17xx.o(i.SSP0_Initialize)
-    SSP0_Initialize                          0x00000fad   Thumb Code    14  ssp_lpc17xx.o(i.SSP0_Initialize)
-    i.SSP0_PowerControl                      0x00000fc0   Section        0  ssp_lpc17xx.o(i.SSP0_PowerControl)
-    SSP0_PowerControl                        0x00000fc1   Thumb Code    14  ssp_lpc17xx.o(i.SSP0_PowerControl)
-    i.SSP0_Receive                           0x00000fd4   Section        0  ssp_lpc17xx.o(i.SSP0_Receive)
-    SSP0_Receive                             0x00000fd5   Thumb Code    18  ssp_lpc17xx.o(i.SSP0_Receive)
-    i.SSP0_Send                              0x00000fec   Section        0  ssp_lpc17xx.o(i.SSP0_Send)
-    SSP0_Send                                0x00000fed   Thumb Code    18  ssp_lpc17xx.o(i.SSP0_Send)
-    i.SSP0_Transfer                          0x00001004   Section        0  ssp_lpc17xx.o(i.SSP0_Transfer)
-    SSP0_Transfer                            0x00001005   Thumb Code    22  ssp_lpc17xx.o(i.SSP0_Transfer)
-    i.SSP0_Uninitialize                      0x00001020   Section        0  ssp_lpc17xx.o(i.SSP0_Uninitialize)
-    SSP0_Uninitialize                        0x00001021   Thumb Code    10  ssp_lpc17xx.o(i.SSP0_Uninitialize)
-    i.SSP_GetCapabilities                    0x00001030   Section        0  ssp_lpc17xx.o(i.SSP_GetCapabilities)
-    SSP_GetCapabilities                      0x00001031   Thumb Code     6  ssp_lpc17xx.o(i.SSP_GetCapabilities)
-    i.SSP_GetVersion                         0x0000103c   Section        0  ssp_lpc17xx.o(i.SSP_GetVersion)
-    SSP_GetVersion                           0x0000103d   Thumb Code    10  ssp_lpc17xx.o(i.SSP_GetVersion)
-    i.SSPx_Control                           0x0000104c   Section        0  ssp_lpc17xx.o(i.SSPx_Control)
-    SSPx_Control                             0x0000104d   Thumb Code  1310  ssp_lpc17xx.o(i.SSPx_Control)
-    i.SSPx_GPDMA_Rx_SignalEvent              0x0000156a   Section        0  ssp_lpc17xx.o(i.SSPx_GPDMA_Rx_SignalEvent)
-    i.SSPx_GPDMA_Tx_SignalEvent              0x000015a0   Section        0  ssp_lpc17xx.o(i.SSPx_GPDMA_Tx_SignalEvent)
-    i.SSPx_GetDataCount                      0x000015bc   Section        0  ssp_lpc17xx.o(i.SSPx_GetDataCount)
-    SSPx_GetDataCount                        0x000015bd   Thumb Code    44  ssp_lpc17xx.o(i.SSPx_GetDataCount)
-    i.SSPx_GetStatus                         0x000015e8   Section        0  ssp_lpc17xx.o(i.SSPx_GetStatus)
-    SSPx_GetStatus                           0x000015e9   Thumb Code    90  ssp_lpc17xx.o(i.SSPx_GetStatus)
-    i.SSPx_IRQHandler                        0x00001642   Section        0  ssp_lpc17xx.o(i.SSPx_IRQHandler)
-    SSPx_IRQHandler                          0x00001643   Thumb Code   260  ssp_lpc17xx.o(i.SSPx_IRQHandler)
-    i.SSPx_Initialize                        0x00001746   Section        0  ssp_lpc17xx.o(i.SSPx_Initialize)
-    SSPx_Initialize                          0x00001747   Thumb Code   168  ssp_lpc17xx.o(i.SSPx_Initialize)
-    i.SSPx_PowerControl                      0x000017f0   Section        0  ssp_lpc17xx.o(i.SSPx_PowerControl)
-    SSPx_PowerControl                        0x000017f1   Thumb Code   446  ssp_lpc17xx.o(i.SSPx_PowerControl)
-    i.SSPx_Receive                           0x000019b4   Section        0  ssp_lpc17xx.o(i.SSPx_Receive)
-    SSPx_Receive                             0x000019b5   Thumb Code   344  ssp_lpc17xx.o(i.SSPx_Receive)
-    i.SSPx_Send                              0x00001b10   Section        0  ssp_lpc17xx.o(i.SSPx_Send)
-    SSPx_Send                                0x00001b11   Thumb Code   336  ssp_lpc17xx.o(i.SSPx_Send)
-    i.SSPx_Transfer                          0x00001c64   Section        0  ssp_lpc17xx.o(i.SSPx_Transfer)
-    SSPx_Transfer                            0x00001c65   Thumb Code   338  ssp_lpc17xx.o(i.SSPx_Transfer)
-    i.SSPx_Uninitialize                      0x00001db6   Section        0  ssp_lpc17xx.o(i.SSPx_Uninitialize)
-    SSPx_Uninitialize                        0x00001db7   Thumb Code   112  ssp_lpc17xx.o(i.SSPx_Uninitialize)
-    i.Set_Channel_active_flag                0x00001e28   Section        0  gpdma_lpc17xx.o(i.Set_Channel_active_flag)
-    Set_Channel_active_flag                  0x00001e29   Thumb Code    50  gpdma_lpc17xx.o(i.Set_Channel_active_flag)
-    i.SysTick_Handler                        0x00001e60   Section        0  main.o(i.SysTick_Handler)
-    i.SystemInit                             0x00001e70   Section        0  system_lpc17xx.o(i.SystemInit)
-    i.TIMER0_IRQHandler                      0x00001fb0   Section        0  main.o(i.TIMER0_IRQHandler)
-    i.Timer_Init                             0x00001fcc   Section        0  main.o(i.Timer_Init)
-    i.UART0_IRQHandler                       0x00001ff0   Section        0  uart_lpc17xx.o(i.UART0_IRQHandler)
-    i.UART_Init                              0x00002000   Section        0  uart.o(i.UART_Init)
-    i.UART_ReadTask                          0x0000206c   Section        0  main.o(i.UART_ReadTask)
-    i.UART_Send                              0x000020b8   Section        0  uart.o(i.UART_Send)
-    i.UART_SendNum                           0x000020e0   Section        0  uart.o(i.UART_SendNum)
-    i.USART0_Control                         0x00002108   Section        0  uart_lpc17xx.o(i.USART0_Control)
-    USART0_Control                           0x00002109   Thumb Code    18  uart_lpc17xx.o(i.USART0_Control)
-    i.USART0_GPDMA_Rx_Event                  0x00002120   Section        0  uart_lpc17xx.o(i.USART0_GPDMA_Rx_Event)
-    i.USART0_GPDMA_Tx_Event                  0x00002134   Section        0  uart_lpc17xx.o(i.USART0_GPDMA_Tx_Event)
-    i.USART0_GetCapabilities                 0x00002148   Section        0  uart_lpc17xx.o(i.USART0_GetCapabilities)
-    USART0_GetCapabilities                   0x00002149   Thumb Code    12  uart_lpc17xx.o(i.USART0_GetCapabilities)
-    i.USART0_GetModemStatus                  0x00002158   Section        0  uart_lpc17xx.o(i.USART0_GetModemStatus)
-    USART0_GetModemStatus                    0x00002159   Thumb Code    12  uart_lpc17xx.o(i.USART0_GetModemStatus)
-    i.USART0_GetRxCount                      0x00002168   Section        0  uart_lpc17xx.o(i.USART0_GetRxCount)
-    USART0_GetRxCount                        0x00002169   Thumb Code    10  uart_lpc17xx.o(i.USART0_GetRxCount)
-    i.USART0_GetStatus                       0x00002178   Section        0  uart_lpc17xx.o(i.USART0_GetStatus)
-    USART0_GetStatus                         0x00002179   Thumb Code    12  uart_lpc17xx.o(i.USART0_GetStatus)
-    i.USART0_GetTxCount                      0x00002188   Section        0  uart_lpc17xx.o(i.USART0_GetTxCount)
-    USART0_GetTxCount                        0x00002189   Thumb Code    10  uart_lpc17xx.o(i.USART0_GetTxCount)
-    i.USART0_Initialize                      0x00002198   Section        0  uart_lpc17xx.o(i.USART0_Initialize)
-    USART0_Initialize                        0x00002199   Thumb Code    14  uart_lpc17xx.o(i.USART0_Initialize)
-    i.USART0_PowerControl                    0x000021ac   Section        0  uart_lpc17xx.o(i.USART0_PowerControl)
-    USART0_PowerControl                      0x000021ad   Thumb Code    14  uart_lpc17xx.o(i.USART0_PowerControl)
-    i.USART0_Receive                         0x000021c0   Section        0  uart_lpc17xx.o(i.USART0_Receive)
-    USART0_Receive                           0x000021c1   Thumb Code    18  uart_lpc17xx.o(i.USART0_Receive)
-    i.USART0_Send                            0x000021d8   Section        0  uart_lpc17xx.o(i.USART0_Send)
-    USART0_Send                              0x000021d9   Thumb Code    18  uart_lpc17xx.o(i.USART0_Send)
-    i.USART0_SetModemControl                 0x000021f0   Section        0  uart_lpc17xx.o(i.USART0_SetModemControl)
-    USART0_SetModemControl                   0x000021f1   Thumb Code    14  uart_lpc17xx.o(i.USART0_SetModemControl)
-    i.USART0_Transfer                        0x00002204   Section        0  uart_lpc17xx.o(i.USART0_Transfer)
-    USART0_Transfer                          0x00002205   Thumb Code    22  uart_lpc17xx.o(i.USART0_Transfer)
-    i.USART0_Uninitialize                    0x00002220   Section        0  uart_lpc17xx.o(i.USART0_Uninitialize)
-    USART0_Uninitialize                      0x00002221   Thumb Code    10  uart_lpc17xx.o(i.USART0_Uninitialize)
-    i.USART_Control                          0x00002230   Section        0  uart_lpc17xx.o(i.USART_Control)
-    USART_Control                            0x00002231   Thumb Code  1600  uart_lpc17xx.o(i.USART_Control)
-    i.USART_GPDMA_Rx_Event                   0x00002874   Section        0  uart_lpc17xx.o(i.USART_GPDMA_Rx_Event)
-    USART_GPDMA_Rx_Event                     0x00002875   Thumb Code   134  uart_lpc17xx.o(i.USART_GPDMA_Rx_Event)
-    i.USART_GPDMA_Tx_Event                   0x000028fa   Section        0  uart_lpc17xx.o(i.USART_GPDMA_Tx_Event)
-    USART_GPDMA_Tx_Event                     0x000028fb   Thumb Code    74  uart_lpc17xx.o(i.USART_GPDMA_Tx_Event)
-    i.USART_GetCapabilities                  0x00002944   Section        0  uart_lpc17xx.o(i.USART_GetCapabilities)
-    USART_GetCapabilities                    0x00002945   Thumb Code     6  uart_lpc17xx.o(i.USART_GetCapabilities)
-    i.USART_GetModemStatus                   0x0000294a   Section        0  uart_lpc17xx.o(i.USART_GetModemStatus)
-    USART_GetModemStatus                     0x0000294b   Thumb Code   236  uart_lpc17xx.o(i.USART_GetModemStatus)
-    i.USART_GetRxCount                       0x00002a36   Section        0  uart_lpc17xx.o(i.USART_GetRxCount)
-    USART_GetRxCount                         0x00002a37   Thumb Code    28  uart_lpc17xx.o(i.USART_GetRxCount)
-    i.USART_GetStatus                        0x00002a52   Section        0  uart_lpc17xx.o(i.USART_GetStatus)
-    USART_GetStatus                          0x00002a53   Thumb Code   188  uart_lpc17xx.o(i.USART_GetStatus)
-    i.USART_GetTxCount                       0x00002b0e   Section        0  uart_lpc17xx.o(i.USART_GetTxCount)
-    USART_GetTxCount                         0x00002b0f   Thumb Code    28  uart_lpc17xx.o(i.USART_GetTxCount)
-    i.USART_IRQHandler                       0x00002b2a   Section        0  uart_lpc17xx.o(i.USART_IRQHandler)
-    USART_IRQHandler                         0x00002b2b   Thumb Code   538  uart_lpc17xx.o(i.USART_IRQHandler)
-    i.USART_Initialize                       0x00002d44   Section        0  uart_lpc17xx.o(i.USART_Initialize)
-    USART_Initialize                         0x00002d45   Thumb Code   254  uart_lpc17xx.o(i.USART_Initialize)
-    i.USART_PowerControl                     0x00002e44   Section        0  uart_lpc17xx.o(i.USART_PowerControl)
-    USART_PowerControl                       0x00002e45   Thumb Code   564  uart_lpc17xx.o(i.USART_PowerControl)
-    i.USART_Receive                          0x0000307c   Section        0  uart_lpc17xx.o(i.USART_Receive)
-    USART_Receive                            0x0000307d   Thumb Code   272  uart_lpc17xx.o(i.USART_Receive)
-    i.USART_RxLineIntHandler                 0x0000318c   Section        0  uart_lpc17xx.o(i.USART_RxLineIntHandler)
-    USART_RxLineIntHandler                   0x0000318d   Thumb Code   104  uart_lpc17xx.o(i.USART_RxLineIntHandler)
-    i.USART_Send                             0x000031f4   Section        0  uart_lpc17xx.o(i.USART_Send)
-    USART_Send                               0x000031f5   Thumb Code   412  uart_lpc17xx.o(i.USART_Send)
-    i.USART_SetBaudrate                      0x00003390   Section        0  uart_lpc17xx.o(i.USART_SetBaudrate)
-    i.USART_SetModemControl                  0x000034c4   Section        0  uart_lpc17xx.o(i.USART_SetModemControl)
-    USART_SetModemControl                    0x000034c5   Thumb Code   160  uart_lpc17xx.o(i.USART_SetModemControl)
-    i.USART_Transfer                         0x00003564   Section        0  uart_lpc17xx.o(i.USART_Transfer)
-    USART_Transfer                           0x00003565   Thumb Code   122  uart_lpc17xx.o(i.USART_Transfer)
-    i.USART_Uninitialize                     0x000035de   Section        0  uart_lpc17xx.o(i.USART_Uninitialize)
-    USART_Uninitialize                       0x000035df   Thumb Code   226  uart_lpc17xx.o(i.USART_Uninitialize)
-    i.USARTx_GetVersion                      0x000036c0   Section        0  uart_lpc17xx.o(i.USARTx_GetVersion)
-    USARTx_GetVersion                        0x000036c1   Thumb Code    10  uart_lpc17xx.o(i.USARTx_GetVersion)
-    i.__NVIC_ClearPendingIRQ                 0x000036d0   Section        0  ssp_lpc17xx.o(i.__NVIC_ClearPendingIRQ)
-    __NVIC_ClearPendingIRQ                   0x000036d1   Thumb Code    22  ssp_lpc17xx.o(i.__NVIC_ClearPendingIRQ)
-    i.__NVIC_ClearPendingIRQ                 0x000036ec   Section        0  uart_lpc17xx.o(i.__NVIC_ClearPendingIRQ)
-    __NVIC_ClearPendingIRQ                   0x000036ed   Thumb Code    22  uart_lpc17xx.o(i.__NVIC_ClearPendingIRQ)
-    i.__NVIC_ClearPendingIRQ                 0x00003708   Section        0  gpdma_lpc17xx.o(i.__NVIC_ClearPendingIRQ)
-    __NVIC_ClearPendingIRQ                   0x00003709   Thumb Code    22  gpdma_lpc17xx.o(i.__NVIC_ClearPendingIRQ)
-    i.__NVIC_EnableIRQ                       0x00003724   Section        0  main.o(i.__NVIC_EnableIRQ)
-    __NVIC_EnableIRQ                         0x00003725   Thumb Code    26  main.o(i.__NVIC_EnableIRQ)
-    i.delay_ms                               0x0000373e   Section        0  lcd_ili9325.o(i.delay_ms)
-    i.displayTextire                         0x0000375c   Section        0  lcd.o(i.displayTextire)
-    i.drawLine                               0x000037c4   Section        0  lcd.o(i.drawLine)
-    i.drawRectangle                          0x000038a0   Section        0  lcd.o(i.drawRectangle)
-    i.drawText                               0x00003916   Section        0  lcd.o(i.drawText)
-    i.drawTextNoBg                           0x000039be   Section        0  lcd.o(i.drawTextNoBg)
-    i.initLCD                                0x00003a54   Section        0  lcd.o(i.initLCD)
-    i.init_ILI9325                           0x00003a94   Section        0  lcd_ili9325.o(i.init_ILI9325)
-    i.lcdConfiguration                       0x00003c68   Section        0  open1768_lcd.o(i.lcdConfiguration)
-    i.lcdRead                                0x00003c90   Section        0  open1768_lcd.o(i.lcdRead)
-    i.lcdReadData                            0x00003cdc   Section        0  open1768_lcd.o(i.lcdReadData)
-    i.lcdReadReg                             0x00003d14   Section        0  open1768_lcd.o(i.lcdReadReg)
-    i.lcdSend                                0x00003d28   Section        0  open1768_lcd.o(i.lcdSend)
-    i.lcdWriteData                           0x00003d54   Section        0  open1768_lcd.o(i.lcdWriteData)
-    i.lcdWriteIndex                          0x00003d8c   Section        0  open1768_lcd.o(i.lcdWriteIndex)
-    i.lcdWriteReg                            0x00003dcc   Section        0  open1768_lcd.o(i.lcdWriteReg)
-    i.main                                   0x00003de0   Section        0  main.o(i.main)
-    i.wait_delay                             0x00003ec4   Section        0  open1768_lcd.o(i.wait_delay)
-    x$fpl$d2f                                0x00003ed8   Section       98  d2f.o(x$fpl$d2f)
-    x$fpl$ddiv                               0x00003f3c   Section      688  ddiv.o(x$fpl$ddiv)
-    ddiv_entry                               0x00003f43   Thumb Code     0  ddiv.o(x$fpl$ddiv)
-    x$fpl$dflt                               0x000041ec   Section       46  dflt_clz.o(x$fpl$dflt)
-    x$fpl$dmul                               0x0000421c   Section      340  dmul.o(x$fpl$dmul)
-    x$fpl$dnaninf                            0x00004370   Section      156  dnaninf.o(x$fpl$dnaninf)
-    x$fpl$dretinf                            0x0000440c   Section       12  dretinf.o(x$fpl$dretinf)
-    x$fpl$fadd                               0x00004418   Section      196  faddsub_clz.o(x$fpl$fadd)
-    _fadd1                                   0x00004427   Thumb Code     0  faddsub_clz.o(x$fpl$fadd)
-    x$fpl$fcmpinf                            0x000044dc   Section       24  fcmpi.o(x$fpl$fcmpinf)
-    x$fpl$ffixu                              0x000044f4   Section       62  ffixu.o(x$fpl$ffixu)
-    x$fpl$fflt                               0x00004534   Section       48  fflt_clz.o(x$fpl$fflt)
-    x$fpl$fleqf                              0x00004564   Section      104  fleqf.o(x$fpl$fleqf)
-    x$fpl$fnaninf                            0x000045cc   Section      140  fnaninf.o(x$fpl$fnaninf)
-    x$fpl$fretinf                            0x00004658   Section       10  fretinf.o(x$fpl$fretinf)
-    x$fpl$fsub                               0x00004664   Section      234  faddsub_clz.o(x$fpl$fsub)
-    _fsub1                                   0x00004673   Thumb Code     0  faddsub_clz.o(x$fpl$fsub)
-    .constdata                               0x0000474e   Section     3040  asciilib.o(.constdata)
-    AsciiLib                                 0x0000474e   Data        3040  asciilib.o(.constdata)
-    .constdata                               0x00005330   Section       20  main.o(.constdata)
-    .constdata                               0x00005344   Section      128  ssp_lpc17xx.o(.constdata)
-    DriverVersion                            0x00005344   Data           4  ssp_lpc17xx.o(.constdata)
-    DriverCapabilities                       0x00005348   Data           4  ssp_lpc17xx.o(.constdata)
-    SSPO_pin_sck                             0x0000534c   Data           2  ssp_lpc17xx.o(.constdata)
-    SSPO_pin_ssel                            0x0000534e   Data           2  ssp_lpc17xx.o(.constdata)
-    SSP0_Resources                           0x00005350   Data          72  ssp_lpc17xx.o(.constdata)
-    .constdata                               0x000053c4   Section      464  uart_lpc17xx.o(.constdata)
-    usart_driver_version                     0x000053c4   Data           4  uart_lpc17xx.o(.constdata)
-    fract_div_lookup_table                   0x000053c8   Data         288  uart_lpc17xx.o(.constdata)
-    UART0_DMA_Tx                             0x000054e8   Data           8  uart_lpc17xx.o(.constdata)
-    UART0_DMA_Rx                             0x000054f0   Data           8  uart_lpc17xx.o(.constdata)
-    USART0_Resources                         0x000054f8   Data         100  uart_lpc17xx.o(.constdata)
-    .constdata                               0x00005594   Section       40  _printf_hex_int.o(.constdata)
-    uc_hextab                                0x00005594   Data          20  _printf_hex_int.o(.constdata)
-    lc_hextab                                0x000055a8   Data          20  _printf_hex_int.o(.constdata)
+    .text                                    0x00000438   Section       78  rt_memclr_w.o(.text)
+    .text                                    0x00000486   Section        0  _printf_intcommon.o(.text)
+    .text                                    0x00000538   Section        0  _printf_char_common.o(.text)
+    _printf_input_char                       0x00000539   Thumb Code    10  _printf_char_common.o(.text)
+    .text                                    0x00000568   Section       74  sys_stackheap_outer.o(.text)
+    .text                                    0x000005b4   Section        0  sys_exit.o(.text)
+    i.ADC_IRQHandler                         0x000005c0   Section        0  adc.o(i.ADC_IRQHandler)
+    i.ADC_StartConvertion                    0x000005e0   Section        0  adc.o(i.ADC_StartConvertion)
+    i.Clear_Channel_active_flag              0x000005f4   Section        0  gpdma_lpc17xx.o(i.Clear_Channel_active_flag)
+    Clear_Channel_active_flag                0x000005f5   Thumb Code    28  gpdma_lpc17xx.o(i.Clear_Channel_active_flag)
+    i.DMA_IRQHandler                         0x00000614   Section        0  gpdma_lpc17xx.o(i.DMA_IRQHandler)
+    i.EINT0_IRQHandler                       0x00000794   Section        0  buttons.o(i.EINT0_IRQHandler)
+    i.EINT3_IRQHandler                       0x00000804   Section        0  main.o(i.EINT3_IRQHandler)
+    i.GPDMA_ChannelConfigure                 0x00000858   Section        0  gpdma_lpc17xx.o(i.GPDMA_ChannelConfigure)
+    i.GPDMA_ChannelDisable                   0x0000094c   Section        0  gpdma_lpc17xx.o(i.GPDMA_ChannelDisable)
+    i.GPDMA_ChannelGetCount                  0x0000097c   Section        0  gpdma_lpc17xx.o(i.GPDMA_ChannelGetCount)
+    i.GPDMA_Initialize                       0x000009ac   Section        0  gpdma_lpc17xx.o(i.GPDMA_Initialize)
+    i.GPDMA_PeripheralSelect                 0x00000a54   Section        0  gpdma_lpc17xx.o(i.GPDMA_PeripheralSelect)
+    i.GPDMA_Uninitialize                     0x00000a98   Section        0  gpdma_lpc17xx.o(i.GPDMA_Uninitialize)
+    i.GPIO_Init                              0x00000b18   Section        0  main.o(i.GPIO_Init)
+    i.GPIO_PinWrite                          0x00000b3c   Section        0  gpio_lpc17xx.o(i.GPIO_PinWrite)
+    i.GPIO_SetDir                            0x00000b64   Section        0  gpio_lpc17xx.o(i.GPIO_SetDir)
+    i.GetSSPClockFreq                        0x00000b9c   Section        0  ssp_lpc17xx.o(i.GetSSPClockFreq)
+    GetSSPClockFreq                          0x00000b9d   Thumb Code    64  ssp_lpc17xx.o(i.GetSSPClockFreq)
+    i.GetUsartClockFreq                      0x00000be0   Section        0  uart_lpc17xx.o(i.GetUsartClockFreq)
+    GetUsartClockFreq                        0x00000be1   Thumb Code    62  uart_lpc17xx.o(i.GetUsartClockFreq)
+    i.PIN_Configure                          0x00000c24   Section        0  pin_lpc17xx.o(i.PIN_Configure)
+    i.RTC_IRQHandler                         0x00000d20   Section        0  main.o(i.RTC_IRQHandler)
+    i.RTC_Init                               0x00000d3c   Section        0  main.o(i.RTC_Init)
+    i.SSP0_Control                           0x00000d54   Section        0  ssp_lpc17xx.o(i.SSP0_Control)
+    SSP0_Control                             0x00000d55   Thumb Code    18  ssp_lpc17xx.o(i.SSP0_Control)
+    i.SSP0_GPDMA_Rx_SignalEvent              0x00000d6c   Section        0  ssp_lpc17xx.o(i.SSP0_GPDMA_Rx_SignalEvent)
+    i.SSP0_GPDMA_Tx_SignalEvent              0x00000d80   Section        0  ssp_lpc17xx.o(i.SSP0_GPDMA_Tx_SignalEvent)
+    i.SSP0_GetDataCount                      0x00000d94   Section        0  ssp_lpc17xx.o(i.SSP0_GetDataCount)
+    SSP0_GetDataCount                        0x00000d95   Thumb Code    10  ssp_lpc17xx.o(i.SSP0_GetDataCount)
+    i.SSP0_GetStatus                         0x00000da4   Section        0  ssp_lpc17xx.o(i.SSP0_GetStatus)
+    SSP0_GetStatus                           0x00000da5   Thumb Code    12  ssp_lpc17xx.o(i.SSP0_GetStatus)
+    i.SSP0_IRQHandler                        0x00000db4   Section        0  ssp_lpc17xx.o(i.SSP0_IRQHandler)
+    i.SSP0_Initialize                        0x00000dc4   Section        0  ssp_lpc17xx.o(i.SSP0_Initialize)
+    SSP0_Initialize                          0x00000dc5   Thumb Code    14  ssp_lpc17xx.o(i.SSP0_Initialize)
+    i.SSP0_PowerControl                      0x00000dd8   Section        0  ssp_lpc17xx.o(i.SSP0_PowerControl)
+    SSP0_PowerControl                        0x00000dd9   Thumb Code    14  ssp_lpc17xx.o(i.SSP0_PowerControl)
+    i.SSP0_Receive                           0x00000dec   Section        0  ssp_lpc17xx.o(i.SSP0_Receive)
+    SSP0_Receive                             0x00000ded   Thumb Code    18  ssp_lpc17xx.o(i.SSP0_Receive)
+    i.SSP0_Send                              0x00000e04   Section        0  ssp_lpc17xx.o(i.SSP0_Send)
+    SSP0_Send                                0x00000e05   Thumb Code    18  ssp_lpc17xx.o(i.SSP0_Send)
+    i.SSP0_Transfer                          0x00000e1c   Section        0  ssp_lpc17xx.o(i.SSP0_Transfer)
+    SSP0_Transfer                            0x00000e1d   Thumb Code    22  ssp_lpc17xx.o(i.SSP0_Transfer)
+    i.SSP0_Uninitialize                      0x00000e38   Section        0  ssp_lpc17xx.o(i.SSP0_Uninitialize)
+    SSP0_Uninitialize                        0x00000e39   Thumb Code    10  ssp_lpc17xx.o(i.SSP0_Uninitialize)
+    i.SSP_GetCapabilities                    0x00000e48   Section        0  ssp_lpc17xx.o(i.SSP_GetCapabilities)
+    SSP_GetCapabilities                      0x00000e49   Thumb Code     6  ssp_lpc17xx.o(i.SSP_GetCapabilities)
+    i.SSP_GetVersion                         0x00000e54   Section        0  ssp_lpc17xx.o(i.SSP_GetVersion)
+    SSP_GetVersion                           0x00000e55   Thumb Code    10  ssp_lpc17xx.o(i.SSP_GetVersion)
+    i.SSPx_Control                           0x00000e64   Section        0  ssp_lpc17xx.o(i.SSPx_Control)
+    SSPx_Control                             0x00000e65   Thumb Code  1310  ssp_lpc17xx.o(i.SSPx_Control)
+    i.SSPx_GPDMA_Rx_SignalEvent              0x00001382   Section        0  ssp_lpc17xx.o(i.SSPx_GPDMA_Rx_SignalEvent)
+    i.SSPx_GPDMA_Tx_SignalEvent              0x000013b8   Section        0  ssp_lpc17xx.o(i.SSPx_GPDMA_Tx_SignalEvent)
+    i.SSPx_GetDataCount                      0x000013d4   Section        0  ssp_lpc17xx.o(i.SSPx_GetDataCount)
+    SSPx_GetDataCount                        0x000013d5   Thumb Code    44  ssp_lpc17xx.o(i.SSPx_GetDataCount)
+    i.SSPx_GetStatus                         0x00001400   Section        0  ssp_lpc17xx.o(i.SSPx_GetStatus)
+    SSPx_GetStatus                           0x00001401   Thumb Code    90  ssp_lpc17xx.o(i.SSPx_GetStatus)
+    i.SSPx_IRQHandler                        0x0000145a   Section        0  ssp_lpc17xx.o(i.SSPx_IRQHandler)
+    SSPx_IRQHandler                          0x0000145b   Thumb Code   260  ssp_lpc17xx.o(i.SSPx_IRQHandler)
+    i.SSPx_Initialize                        0x0000155e   Section        0  ssp_lpc17xx.o(i.SSPx_Initialize)
+    SSPx_Initialize                          0x0000155f   Thumb Code   168  ssp_lpc17xx.o(i.SSPx_Initialize)
+    i.SSPx_PowerControl                      0x00001608   Section        0  ssp_lpc17xx.o(i.SSPx_PowerControl)
+    SSPx_PowerControl                        0x00001609   Thumb Code   446  ssp_lpc17xx.o(i.SSPx_PowerControl)
+    i.SSPx_Receive                           0x000017cc   Section        0  ssp_lpc17xx.o(i.SSPx_Receive)
+    SSPx_Receive                             0x000017cd   Thumb Code   344  ssp_lpc17xx.o(i.SSPx_Receive)
+    i.SSPx_Send                              0x00001928   Section        0  ssp_lpc17xx.o(i.SSPx_Send)
+    SSPx_Send                                0x00001929   Thumb Code   336  ssp_lpc17xx.o(i.SSPx_Send)
+    i.SSPx_Transfer                          0x00001a7c   Section        0  ssp_lpc17xx.o(i.SSPx_Transfer)
+    SSPx_Transfer                            0x00001a7d   Thumb Code   338  ssp_lpc17xx.o(i.SSPx_Transfer)
+    i.SSPx_Uninitialize                      0x00001bce   Section        0  ssp_lpc17xx.o(i.SSPx_Uninitialize)
+    SSPx_Uninitialize                        0x00001bcf   Thumb Code   112  ssp_lpc17xx.o(i.SSPx_Uninitialize)
+    i.Set_Channel_active_flag                0x00001c40   Section        0  gpdma_lpc17xx.o(i.Set_Channel_active_flag)
+    Set_Channel_active_flag                  0x00001c41   Thumb Code    50  gpdma_lpc17xx.o(i.Set_Channel_active_flag)
+    i.SysTick_Handler                        0x00001c78   Section        0  main.o(i.SysTick_Handler)
+    i.SystemInit                             0x00001c88   Section        0  system_lpc17xx.o(i.SystemInit)
+    i.TIMER0_IRQHandler                      0x00001dc8   Section        0  main.o(i.TIMER0_IRQHandler)
+    i.Timer_Init                             0x00001dd8   Section        0  main.o(i.Timer_Init)
+    i.UART0_IRQHandler                       0x00001dfc   Section        0  uart_lpc17xx.o(i.UART0_IRQHandler)
+    i.UART_Init                              0x00001e0c   Section        0  uart.o(i.UART_Init)
+    i.UART_Send                              0x00001e78   Section        0  uart.o(i.UART_Send)
+    i.UART_SendNum                           0x00001ea0   Section        0  uart.o(i.UART_SendNum)
+    i.USART0_Control                         0x00001ec8   Section        0  uart_lpc17xx.o(i.USART0_Control)
+    USART0_Control                           0x00001ec9   Thumb Code    18  uart_lpc17xx.o(i.USART0_Control)
+    i.USART0_GPDMA_Rx_Event                  0x00001ee0   Section        0  uart_lpc17xx.o(i.USART0_GPDMA_Rx_Event)
+    i.USART0_GPDMA_Tx_Event                  0x00001ef4   Section        0  uart_lpc17xx.o(i.USART0_GPDMA_Tx_Event)
+    i.USART0_GetCapabilities                 0x00001f08   Section        0  uart_lpc17xx.o(i.USART0_GetCapabilities)
+    USART0_GetCapabilities                   0x00001f09   Thumb Code    12  uart_lpc17xx.o(i.USART0_GetCapabilities)
+    i.USART0_GetModemStatus                  0x00001f18   Section        0  uart_lpc17xx.o(i.USART0_GetModemStatus)
+    USART0_GetModemStatus                    0x00001f19   Thumb Code    12  uart_lpc17xx.o(i.USART0_GetModemStatus)
+    i.USART0_GetRxCount                      0x00001f28   Section        0  uart_lpc17xx.o(i.USART0_GetRxCount)
+    USART0_GetRxCount                        0x00001f29   Thumb Code    10  uart_lpc17xx.o(i.USART0_GetRxCount)
+    i.USART0_GetStatus                       0x00001f38   Section        0  uart_lpc17xx.o(i.USART0_GetStatus)
+    USART0_GetStatus                         0x00001f39   Thumb Code    12  uart_lpc17xx.o(i.USART0_GetStatus)
+    i.USART0_GetTxCount                      0x00001f48   Section        0  uart_lpc17xx.o(i.USART0_GetTxCount)
+    USART0_GetTxCount                        0x00001f49   Thumb Code    10  uart_lpc17xx.o(i.USART0_GetTxCount)
+    i.USART0_Initialize                      0x00001f58   Section        0  uart_lpc17xx.o(i.USART0_Initialize)
+    USART0_Initialize                        0x00001f59   Thumb Code    14  uart_lpc17xx.o(i.USART0_Initialize)
+    i.USART0_PowerControl                    0x00001f6c   Section        0  uart_lpc17xx.o(i.USART0_PowerControl)
+    USART0_PowerControl                      0x00001f6d   Thumb Code    14  uart_lpc17xx.o(i.USART0_PowerControl)
+    i.USART0_Receive                         0x00001f80   Section        0  uart_lpc17xx.o(i.USART0_Receive)
+    USART0_Receive                           0x00001f81   Thumb Code    18  uart_lpc17xx.o(i.USART0_Receive)
+    i.USART0_Send                            0x00001f98   Section        0  uart_lpc17xx.o(i.USART0_Send)
+    USART0_Send                              0x00001f99   Thumb Code    18  uart_lpc17xx.o(i.USART0_Send)
+    i.USART0_SetModemControl                 0x00001fb0   Section        0  uart_lpc17xx.o(i.USART0_SetModemControl)
+    USART0_SetModemControl                   0x00001fb1   Thumb Code    14  uart_lpc17xx.o(i.USART0_SetModemControl)
+    i.USART0_Transfer                        0x00001fc4   Section        0  uart_lpc17xx.o(i.USART0_Transfer)
+    USART0_Transfer                          0x00001fc5   Thumb Code    22  uart_lpc17xx.o(i.USART0_Transfer)
+    i.USART0_Uninitialize                    0x00001fe0   Section        0  uart_lpc17xx.o(i.USART0_Uninitialize)
+    USART0_Uninitialize                      0x00001fe1   Thumb Code    10  uart_lpc17xx.o(i.USART0_Uninitialize)
+    i.USART_Control                          0x00001ff0   Section        0  uart_lpc17xx.o(i.USART_Control)
+    USART_Control                            0x00001ff1   Thumb Code  1600  uart_lpc17xx.o(i.USART_Control)
+    i.USART_GPDMA_Rx_Event                   0x00002634   Section        0  uart_lpc17xx.o(i.USART_GPDMA_Rx_Event)
+    USART_GPDMA_Rx_Event                     0x00002635   Thumb Code   134  uart_lpc17xx.o(i.USART_GPDMA_Rx_Event)
+    i.USART_GPDMA_Tx_Event                   0x000026ba   Section        0  uart_lpc17xx.o(i.USART_GPDMA_Tx_Event)
+    USART_GPDMA_Tx_Event                     0x000026bb   Thumb Code    74  uart_lpc17xx.o(i.USART_GPDMA_Tx_Event)
+    i.USART_GetCapabilities                  0x00002704   Section        0  uart_lpc17xx.o(i.USART_GetCapabilities)
+    USART_GetCapabilities                    0x00002705   Thumb Code     6  uart_lpc17xx.o(i.USART_GetCapabilities)
+    i.USART_GetModemStatus                   0x0000270a   Section        0  uart_lpc17xx.o(i.USART_GetModemStatus)
+    USART_GetModemStatus                     0x0000270b   Thumb Code   236  uart_lpc17xx.o(i.USART_GetModemStatus)
+    i.USART_GetRxCount                       0x000027f6   Section        0  uart_lpc17xx.o(i.USART_GetRxCount)
+    USART_GetRxCount                         0x000027f7   Thumb Code    28  uart_lpc17xx.o(i.USART_GetRxCount)
+    i.USART_GetStatus                        0x00002812   Section        0  uart_lpc17xx.o(i.USART_GetStatus)
+    USART_GetStatus                          0x00002813   Thumb Code   188  uart_lpc17xx.o(i.USART_GetStatus)
+    i.USART_GetTxCount                       0x000028ce   Section        0  uart_lpc17xx.o(i.USART_GetTxCount)
+    USART_GetTxCount                         0x000028cf   Thumb Code    28  uart_lpc17xx.o(i.USART_GetTxCount)
+    i.USART_IRQHandler                       0x000028ea   Section        0  uart_lpc17xx.o(i.USART_IRQHandler)
+    USART_IRQHandler                         0x000028eb   Thumb Code   538  uart_lpc17xx.o(i.USART_IRQHandler)
+    i.USART_Initialize                       0x00002b04   Section        0  uart_lpc17xx.o(i.USART_Initialize)
+    USART_Initialize                         0x00002b05   Thumb Code   254  uart_lpc17xx.o(i.USART_Initialize)
+    i.USART_PowerControl                     0x00002c04   Section        0  uart_lpc17xx.o(i.USART_PowerControl)
+    USART_PowerControl                       0x00002c05   Thumb Code   564  uart_lpc17xx.o(i.USART_PowerControl)
+    i.USART_Receive                          0x00002e3c   Section        0  uart_lpc17xx.o(i.USART_Receive)
+    USART_Receive                            0x00002e3d   Thumb Code   272  uart_lpc17xx.o(i.USART_Receive)
+    i.USART_RxLineIntHandler                 0x00002f4c   Section        0  uart_lpc17xx.o(i.USART_RxLineIntHandler)
+    USART_RxLineIntHandler                   0x00002f4d   Thumb Code   104  uart_lpc17xx.o(i.USART_RxLineIntHandler)
+    i.USART_Send                             0x00002fb4   Section        0  uart_lpc17xx.o(i.USART_Send)
+    USART_Send                               0x00002fb5   Thumb Code   412  uart_lpc17xx.o(i.USART_Send)
+    i.USART_SetBaudrate                      0x00003150   Section        0  uart_lpc17xx.o(i.USART_SetBaudrate)
+    i.USART_SetModemControl                  0x00003284   Section        0  uart_lpc17xx.o(i.USART_SetModemControl)
+    USART_SetModemControl                    0x00003285   Thumb Code   160  uart_lpc17xx.o(i.USART_SetModemControl)
+    i.USART_Transfer                         0x00003324   Section        0  uart_lpc17xx.o(i.USART_Transfer)
+    USART_Transfer                           0x00003325   Thumb Code   122  uart_lpc17xx.o(i.USART_Transfer)
+    i.USART_Uninitialize                     0x0000339e   Section        0  uart_lpc17xx.o(i.USART_Uninitialize)
+    USART_Uninitialize                       0x0000339f   Thumb Code   226  uart_lpc17xx.o(i.USART_Uninitialize)
+    i.USARTx_GetVersion                      0x00003480   Section        0  uart_lpc17xx.o(i.USARTx_GetVersion)
+    USARTx_GetVersion                        0x00003481   Thumb Code    10  uart_lpc17xx.o(i.USARTx_GetVersion)
+    i.__NVIC_ClearPendingIRQ                 0x00003490   Section        0  ssp_lpc17xx.o(i.__NVIC_ClearPendingIRQ)
+    __NVIC_ClearPendingIRQ                   0x00003491   Thumb Code    22  ssp_lpc17xx.o(i.__NVIC_ClearPendingIRQ)
+    i.__NVIC_ClearPendingIRQ                 0x000034ac   Section        0  uart_lpc17xx.o(i.__NVIC_ClearPendingIRQ)
+    __NVIC_ClearPendingIRQ                   0x000034ad   Thumb Code    22  uart_lpc17xx.o(i.__NVIC_ClearPendingIRQ)
+    i.__NVIC_ClearPendingIRQ                 0x000034c8   Section        0  gpdma_lpc17xx.o(i.__NVIC_ClearPendingIRQ)
+    __NVIC_ClearPendingIRQ                   0x000034c9   Thumb Code    22  gpdma_lpc17xx.o(i.__NVIC_ClearPendingIRQ)
+    i.__NVIC_EnableIRQ                       0x000034e4   Section        0  main.o(i.__NVIC_EnableIRQ)
+    __NVIC_EnableIRQ                         0x000034e5   Thumb Code    26  main.o(i.__NVIC_EnableIRQ)
+    i.delay_ms                               0x000034fe   Section        0  lcd_ili9325.o(i.delay_ms)
+    i.displayTextire                         0x0000351c   Section        0  lcd.o(i.displayTextire)
+    i.initADC                                0x00003584   Section        0  adc.o(i.initADC)
+    i.initLCD                                0x000035dc   Section        0  lcd.o(i.initLCD)
+    i.init_ILI9325                           0x0000361c   Section        0  lcd_ili9325.o(i.init_ILI9325)
+    i.lcdConfiguration                       0x000037f0   Section        0  open1768_lcd.o(i.lcdConfiguration)
+    i.lcdRead                                0x00003818   Section        0  open1768_lcd.o(i.lcdRead)
+    i.lcdReadData                            0x00003864   Section        0  open1768_lcd.o(i.lcdReadData)
+    i.lcdReadReg                             0x0000389c   Section        0  open1768_lcd.o(i.lcdReadReg)
+    i.lcdSend                                0x000038b0   Section        0  open1768_lcd.o(i.lcdSend)
+    i.lcdWriteData                           0x000038dc   Section        0  open1768_lcd.o(i.lcdWriteData)
+    i.lcdWriteIndex                          0x00003914   Section        0  open1768_lcd.o(i.lcdWriteIndex)
+    i.lcdWriteReg                            0x00003954   Section        0  open1768_lcd.o(i.lcdWriteReg)
+    i.main                                   0x00003968   Section        0  main.o(i.main)
+    i.wait_delay                             0x00003a34   Section        0  open1768_lcd.o(i.wait_delay)
+    .constdata                               0x00003a48   Section      128  ssp_lpc17xx.o(.constdata)
+    DriverVersion                            0x00003a48   Data           4  ssp_lpc17xx.o(.constdata)
+    DriverCapabilities                       0x00003a4c   Data           4  ssp_lpc17xx.o(.constdata)
+    SSPO_pin_sck                             0x00003a50   Data           2  ssp_lpc17xx.o(.constdata)
+    SSPO_pin_ssel                            0x00003a52   Data           2  ssp_lpc17xx.o(.constdata)
+    SSP0_Resources                           0x00003a54   Data          72  ssp_lpc17xx.o(.constdata)
+    .constdata                               0x00003ac8   Section      464  uart_lpc17xx.o(.constdata)
+    usart_driver_version                     0x00003ac8   Data           4  uart_lpc17xx.o(.constdata)
+    fract_div_lookup_table                   0x00003acc   Data         288  uart_lpc17xx.o(.constdata)
+    UART0_DMA_Tx                             0x00003bec   Data           8  uart_lpc17xx.o(.constdata)
+    UART0_DMA_Rx                             0x00003bf4   Data           8  uart_lpc17xx.o(.constdata)
+    USART0_Resources                         0x00003bfc   Data         100  uart_lpc17xx.o(.constdata)
+    .constdata                               0x00003c98   Section       40  _printf_hex_int.o(.constdata)
+    uc_hextab                                0x00003c98   Data          20  _printf_hex_int.o(.constdata)
+    lc_hextab                                0x00003cac   Data          20  _printf_hex_int.o(.constdata)
     STACK                                    0x10000000   Section      512  startup_lpc17xx.o(STACK)
     Stack_Mem                                0x10000000   Data         512  startup_lpc17xx.o(STACK)
     __initial_sp                             0x10000200   Data           0  startup_lpc17xx.o(STACK)
-    .data                                    0x2007c000   Section       25  main.o(.data)
-    flag                                     0x2007c005   Data           1  main.o(.data)
+    .data                                    0x2007c000   Section       12  main.o(.data)
+    flag                                     0x2007c004   Data           1  main.o(.data)
     lastInt                                  0x2007c008   Data           4  main.o(.data)
-    lastInt                                  0x2007c00c   Data           4  main.o(.data)
-    clickCoutn                               0x2007c010   Data           4  main.o(.data)
-    timeStart                                0x2007c014   Data           4  main.o(.data)
-    flag                                     0x2007c018   Data           1  main.o(.data)
-    .data                                    0x2007c01c   Section        8  ssp_lpc17xx.o(.data)
-    dummy_data                               0x2007c01c   Data           4  ssp_lpc17xx.o(.data)
+    .data                                    0x2007c00c   Section       17  buttons.o(.data)
+    lastInt                                  0x2007c010   Data           4  buttons.o(.data)
+    clickCoutn                               0x2007c014   Data           4  buttons.o(.data)
+    timeStart                                0x2007c018   Data           4  buttons.o(.data)
+    flag                                     0x2007c01c   Data           1  buttons.o(.data)
+    .data                                    0x2007c020   Section        8  ssp_lpc17xx.o(.data)
     dummy_data                               0x2007c020   Data           4  ssp_lpc17xx.o(.data)
-    .data                                    0x2007c024   Section        8  gpdma_lpc17xx.o(.data)
-    Channel_active                           0x2007c024   Data           4  gpdma_lpc17xx.o(.data)
-    Init_cnt                                 0x2007c028   Data           4  gpdma_lpc17xx.o(.data)
-    .data                                    0x2007c02c   Section        4  system_lpc17xx.o(.data)
-    .bss                                     0x2007c030   Section       44  ssp_lpc17xx.o(.bss)
-    SSP0_Info                                0x2007c030   Data          16  ssp_lpc17xx.o(.bss)
-    SSP0_Xfer                                0x2007c040   Data          28  ssp_lpc17xx.o(.bss)
-    .bss                                     0x2007c05c   Section       52  uart_lpc17xx.o(.bss)
-    USART0_Info                              0x2007c05c   Data          52  uart_lpc17xx.o(.bss)
-    .bss                                     0x2007c090   Section      160  gpdma_lpc17xx.o(.bss)
-    Channel_info                             0x2007c090   Data         160  gpdma_lpc17xx.o(.bss)
-    .bss                                     0x2007c130   Section       96  libspace.o(.bss)
-    HEAP                                     0x2007c190   Section        0  startup_lpc17xx.o(HEAP)
-    Heap_Mem                                 0x2007c190   Data           0  startup_lpc17xx.o(HEAP)
+    dummy_data                               0x2007c024   Data           4  ssp_lpc17xx.o(.data)
+    .data                                    0x2007c028   Section        8  gpdma_lpc17xx.o(.data)
+    Channel_active                           0x2007c028   Data           4  gpdma_lpc17xx.o(.data)
+    Init_cnt                                 0x2007c02c   Data           4  gpdma_lpc17xx.o(.data)
+    .data                                    0x2007c030   Section        4  system_lpc17xx.o(.data)
+    .bss                                     0x2007c034   Section       44  ssp_lpc17xx.o(.bss)
+    SSP0_Info                                0x2007c034   Data          16  ssp_lpc17xx.o(.bss)
+    SSP0_Xfer                                0x2007c044   Data          28  ssp_lpc17xx.o(.bss)
+    .bss                                     0x2007c060   Section       52  uart_lpc17xx.o(.bss)
+    USART0_Info                              0x2007c060   Data          52  uart_lpc17xx.o(.bss)
+    .bss                                     0x2007c094   Section      160  gpdma_lpc17xx.o(.bss)
+    Channel_info                             0x2007c094   Data         160  gpdma_lpc17xx.o(.bss)
+    .bss                                     0x2007c134   Section       96  libspace.o(.bss)
+    HEAP                                     0x2007c198   Section        0  startup_lpc17xx.o(HEAP)
+    Heap_Mem                                 0x2007c198   Data           0  startup_lpc17xx.o(HEAP)
 
     Global Symbols
 
@@ -1057,7 +1044,6 @@ Image Symbol Table
     SVC_Handler                              0x0000018b   Thumb Code     2  startup_lpc17xx.o(.text)
     DebugMon_Handler                         0x0000018d   Thumb Code     2  startup_lpc17xx.o(.text)
     PendSV_Handler                           0x0000018f   Thumb Code     2  startup_lpc17xx.o(.text)
-    ADC_IRQHandler                           0x00000193   Thumb Code     0  startup_lpc17xx.o(.text)
     BOD_IRQHandler                           0x00000193   Thumb Code     0  startup_lpc17xx.o(.text)
     CANActivity_IRQHandler                   0x00000193   Thumb Code     0  startup_lpc17xx.o(.text)
     CAN_IRQHandler                           0x00000193   Thumb Code     0  startup_lpc17xx.o(.text)
@@ -1099,113 +1085,76 @@ Image Symbol Table
     __user_perthread_libspace                0x000002f1   Thumb Code     0  libspace.o(.text)
     __I$use$semihosting                      0x000002f9   Thumb Code     0  use_no_semi.o(.text)
     __use_no_semihosting_swi                 0x000002f9   Thumb Code     2  use_no_semi.o(.text)
-    __I$use$fp                               0x000002fa   Number         0  usenofp.o(x$fpl$usenofp)
     __semihosting_library_function           0x000002fb   Thumb Code     0  indicate_semi.o(.text)
     __printf                                 0x00000301   Thumb Code   104  __printf.o(.text)
     _printf_int_dec                          0x00000369   Thumb Code   104  _printf_dec.o(.text)
     _printf_int_hex                          0x000003e1   Thumb Code    84  _printf_hex_int.o(.text)
     _printf_longlong_hex                     0x000003e1   Thumb Code     0  _printf_hex_int.o(.text)
-    __aeabi_memcpy                           0x00000439   Thumb Code     0  rt_memcpy_v6.o(.text)
-    __rt_memcpy                              0x00000439   Thumb Code   138  rt_memcpy_v6.o(.text)
-    _memcpy_lastbytes                        0x0000049f   Thumb Code     0  rt_memcpy_v6.o(.text)
-    __aeabi_memcpy4                          0x000004c3   Thumb Code     0  rt_memcpy_w.o(.text)
-    __aeabi_memcpy8                          0x000004c3   Thumb Code     0  rt_memcpy_w.o(.text)
-    __rt_memcpy_w                            0x000004c3   Thumb Code   100  rt_memcpy_w.o(.text)
-    _memcpy_lastbytes_aligned                0x0000050b   Thumb Code     0  rt_memcpy_w.o(.text)
-    __aeabi_memclr4                          0x00000527   Thumb Code     0  rt_memclr_w.o(.text)
-    __aeabi_memclr8                          0x00000527   Thumb Code     0  rt_memclr_w.o(.text)
-    __rt_memclr_w                            0x00000527   Thumb Code    78  rt_memclr_w.o(.text)
-    _memset_w                                0x0000052b   Thumb Code     0  rt_memclr_w.o(.text)
-    _printf_int_common                       0x00000575   Thumb Code   178  _printf_intcommon.o(.text)
-    _printf_char_common                      0x00000633   Thumb Code    32  _printf_char_common.o(.text)
-    __user_setup_stackheap                   0x00000659   Thumb Code    74  sys_stackheap_outer.o(.text)
-    _sys_exit                                0x000006a5   Thumb Code     8  sys_exit.o(.text)
-    DMA_IRQHandler                           0x000006d1   Thumb Code   372  gpdma_lpc17xx.o(i.DMA_IRQHandler)
-    EINT0_IRQHandler                         0x00000851   Thumb Code    48  main.o(i.EINT0_IRQHandler)
-    EINT3_IRQHandler                         0x000008c1   Thumb Code    52  main.o(i.EINT3_IRQHandler)
-    GPDMA_ChannelConfigure                   0x00000915   Thumb Code   232  gpdma_lpc17xx.o(i.GPDMA_ChannelConfigure)
-    GPDMA_ChannelDisable                     0x00000a09   Thumb Code    44  gpdma_lpc17xx.o(i.GPDMA_ChannelDisable)
-    GPDMA_ChannelGetCount                    0x00000a39   Thumb Code    38  gpdma_lpc17xx.o(i.GPDMA_ChannelGetCount)
-    GPDMA_Initialize                         0x00000a69   Thumb Code   146  gpdma_lpc17xx.o(i.GPDMA_Initialize)
-    GPDMA_PeripheralSelect                   0x00000b11   Thumb Code    62  gpdma_lpc17xx.o(i.GPDMA_PeripheralSelect)
-    GPDMA_Uninitialize                       0x00000b55   Thumb Code   116  gpdma_lpc17xx.o(i.GPDMA_Uninitialize)
-    GPIO_Init                                0x00000bd5   Thumb Code    32  main.o(i.GPIO_Init)
-    GPIO_PinWrite                            0x00000bf9   Thumb Code    36  gpio_lpc17xx.o(i.GPIO_PinWrite)
-    GPIO_SetDir                              0x00000c21   Thumb Code    52  gpio_lpc17xx.o(i.GPIO_SetDir)
-    GetASCIICode                             0x00000c59   Thumb Code    40  asciilib.o(i.GetASCIICode)
-    KEY2_Init                                0x00000d0d   Thumb Code    74  main.o(i.KEY2_Init)
-    OnClikcTask                              0x00000d65   Thumb Code   104  main.o(i.OnClikcTask)
-    PIN_Configure                            0x00000de5   Thumb Code   246  pin_lpc17xx.o(i.PIN_Configure)
-    RTC_IRQHandler                           0x00000ee1   Thumb Code    42  main.o(i.RTC_IRQHandler)
-    RTC_Init                                 0x00000f25   Thumb Code    18  main.o(i.RTC_Init)
-    SSP0_GPDMA_Rx_SignalEvent                0x00000f55   Thumb Code    14  ssp_lpc17xx.o(i.SSP0_GPDMA_Rx_SignalEvent)
-    SSP0_GPDMA_Tx_SignalEvent                0x00000f69   Thumb Code    14  ssp_lpc17xx.o(i.SSP0_GPDMA_Tx_SignalEvent)
-    SSP0_IRQHandler                          0x00000f9d   Thumb Code    10  ssp_lpc17xx.o(i.SSP0_IRQHandler)
-    SSPx_GPDMA_Rx_SignalEvent                0x0000156b   Thumb Code    54  ssp_lpc17xx.o(i.SSPx_GPDMA_Rx_SignalEvent)
-    SSPx_GPDMA_Tx_SignalEvent                0x000015a1   Thumb Code    28  ssp_lpc17xx.o(i.SSPx_GPDMA_Tx_SignalEvent)
-    SysTick_Handler                          0x00001e61   Thumb Code    12  main.o(i.SysTick_Handler)
-    SystemInit                               0x00001e71   Thumb Code   302  system_lpc17xx.o(i.SystemInit)
-    TIMER0_IRQHandler                        0x00001fb1   Thumb Code    18  main.o(i.TIMER0_IRQHandler)
-    Timer_Init                               0x00001fcd   Thumb Code    30  main.o(i.Timer_Init)
-    UART0_IRQHandler                         0x00001ff1   Thumb Code    10  uart_lpc17xx.o(i.UART0_IRQHandler)
-    UART_Init                                0x00002001   Thumb Code    94  uart.o(i.UART_Init)
-    UART_ReadTask                            0x0000206d   Thumb Code    72  main.o(i.UART_ReadTask)
-    UART_Send                                0x000020b9   Thumb Code    36  uart.o(i.UART_Send)
-    UART_SendNum                             0x000020e1   Thumb Code    34  uart.o(i.UART_SendNum)
-    USART0_GPDMA_Rx_Event                    0x00002121   Thumb Code    14  uart_lpc17xx.o(i.USART0_GPDMA_Rx_Event)
-    USART0_GPDMA_Tx_Event                    0x00002135   Thumb Code    14  uart_lpc17xx.o(i.USART0_GPDMA_Tx_Event)
-    USART_SetBaudrate                        0x00003391   Thumb Code   302  uart_lpc17xx.o(i.USART_SetBaudrate)
-    delay_ms                                 0x0000373f   Thumb Code    30  lcd_ili9325.o(i.delay_ms)
-    displayTextire                           0x0000375d   Thumb Code    88  lcd.o(i.displayTextire)
-    drawLine                                 0x000037c5   Thumb Code   216  lcd.o(i.drawLine)
-    drawRectangle                            0x000038a1   Thumb Code   118  lcd.o(i.drawRectangle)
-    drawText                                 0x00003917   Thumb Code   168  lcd.o(i.drawText)
-    drawTextNoBg                             0x000039bf   Thumb Code   150  lcd.o(i.drawTextNoBg)
-    initLCD                                  0x00003a55   Thumb Code    54  lcd.o(i.initLCD)
-    init_ILI9325                             0x00003a95   Thumb Code   468  lcd_ili9325.o(i.init_ILI9325)
-    lcdConfiguration                         0x00003c69   Thumb Code    36  open1768_lcd.o(i.lcdConfiguration)
-    lcdRead                                  0x00003c91   Thumb Code    70  open1768_lcd.o(i.lcdRead)
-    lcdReadData                              0x00003cdd   Thumb Code    50  open1768_lcd.o(i.lcdReadData)
-    lcdReadReg                               0x00003d15   Thumb Code    20  open1768_lcd.o(i.lcdReadReg)
-    lcdSend                                  0x00003d29   Thumb Code    40  open1768_lcd.o(i.lcdSend)
-    lcdWriteData                             0x00003d55   Thumb Code    50  open1768_lcd.o(i.lcdWriteData)
-    lcdWriteIndex                            0x00003d8d   Thumb Code    60  open1768_lcd.o(i.lcdWriteIndex)
-    lcdWriteReg                              0x00003dcd   Thumb Code    20  open1768_lcd.o(i.lcdWriteReg)
-    main                                     0x00003de1   Thumb Code   192  main.o(i.main)
-    wait_delay                               0x00003ec5   Thumb Code    18  open1768_lcd.o(i.wait_delay)
-    __aeabi_d2f                              0x00003ed9   Thumb Code     0  d2f.o(x$fpl$d2f)
-    _d2f                                     0x00003ed9   Thumb Code    98  d2f.o(x$fpl$d2f)
-    __aeabi_ddiv                             0x00003f3d   Thumb Code     0  ddiv.o(x$fpl$ddiv)
-    _ddiv                                    0x00003f3d   Thumb Code   552  ddiv.o(x$fpl$ddiv)
-    __aeabi_i2d                              0x000041ed   Thumb Code     0  dflt_clz.o(x$fpl$dflt)
-    _dflt                                    0x000041ed   Thumb Code    46  dflt_clz.o(x$fpl$dflt)
-    __aeabi_dmul                             0x0000421d   Thumb Code     0  dmul.o(x$fpl$dmul)
-    _dmul                                    0x0000421d   Thumb Code   332  dmul.o(x$fpl$dmul)
-    __fpl_dnaninf                            0x00004371   Thumb Code   156  dnaninf.o(x$fpl$dnaninf)
-    __fpl_dretinf                            0x0000440d   Thumb Code    12  dretinf.o(x$fpl$dretinf)
-    __aeabi_fadd                             0x00004419   Thumb Code     0  faddsub_clz.o(x$fpl$fadd)
-    _fadd                                    0x00004419   Thumb Code   196  faddsub_clz.o(x$fpl$fadd)
-    __fpl_fcmp_Inf                           0x000044dd   Thumb Code    24  fcmpi.o(x$fpl$fcmpinf)
-    __aeabi_f2uiz                            0x000044f5   Thumb Code     0  ffixu.o(x$fpl$ffixu)
-    _ffixu                                   0x000044f5   Thumb Code    62  ffixu.o(x$fpl$ffixu)
-    __aeabi_i2f                              0x00004535   Thumb Code     0  fflt_clz.o(x$fpl$fflt)
-    _fflt                                    0x00004535   Thumb Code    48  fflt_clz.o(x$fpl$fflt)
-    __aeabi_cfcmple                          0x00004565   Thumb Code     0  fleqf.o(x$fpl$fleqf)
-    _fcmple                                  0x00004565   Thumb Code   104  fleqf.o(x$fpl$fleqf)
-    __fpl_fcmple_InfNaN                      0x000045b7   Thumb Code     0  fleqf.o(x$fpl$fleqf)
-    __fpl_fnaninf                            0x000045cd   Thumb Code   140  fnaninf.o(x$fpl$fnaninf)
-    __fpl_fretinf                            0x00004659   Thumb Code    10  fretinf.o(x$fpl$fretinf)
-    __aeabi_fsub                             0x00004665   Thumb Code     0  faddsub_clz.o(x$fpl$fsub)
-    _fsub                                    0x00004665   Thumb Code   234  faddsub_clz.o(x$fpl$fsub)
-    Driver_SPI0                              0x00005398   Data          44  ssp_lpc17xx.o(.constdata)
-    Driver_USART0                            0x0000555c   Data          56  uart_lpc17xx.o(.constdata)
-    Region$$Table$$Base                      0x000055bc   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x000055ec   Number         0  anon$$obj.o(Region$$Table)
+    __aeabi_memclr4                          0x00000439   Thumb Code     0  rt_memclr_w.o(.text)
+    __aeabi_memclr8                          0x00000439   Thumb Code     0  rt_memclr_w.o(.text)
+    __rt_memclr_w                            0x00000439   Thumb Code    78  rt_memclr_w.o(.text)
+    _memset_w                                0x0000043d   Thumb Code     0  rt_memclr_w.o(.text)
+    _printf_int_common                       0x00000487   Thumb Code   178  _printf_intcommon.o(.text)
+    _printf_char_common                      0x00000543   Thumb Code    32  _printf_char_common.o(.text)
+    __user_setup_stackheap                   0x00000569   Thumb Code    74  sys_stackheap_outer.o(.text)
+    _sys_exit                                0x000005b5   Thumb Code     8  sys_exit.o(.text)
+    ADC_IRQHandler                           0x000005c1   Thumb Code    24  adc.o(i.ADC_IRQHandler)
+    ADC_StartConvertion                      0x000005e1   Thumb Code    14  adc.o(i.ADC_StartConvertion)
+    DMA_IRQHandler                           0x00000615   Thumb Code   372  gpdma_lpc17xx.o(i.DMA_IRQHandler)
+    EINT0_IRQHandler                         0x00000795   Thumb Code    48  buttons.o(i.EINT0_IRQHandler)
+    EINT3_IRQHandler                         0x00000805   Thumb Code    52  main.o(i.EINT3_IRQHandler)
+    GPDMA_ChannelConfigure                   0x00000859   Thumb Code   232  gpdma_lpc17xx.o(i.GPDMA_ChannelConfigure)
+    GPDMA_ChannelDisable                     0x0000094d   Thumb Code    44  gpdma_lpc17xx.o(i.GPDMA_ChannelDisable)
+    GPDMA_ChannelGetCount                    0x0000097d   Thumb Code    38  gpdma_lpc17xx.o(i.GPDMA_ChannelGetCount)
+    GPDMA_Initialize                         0x000009ad   Thumb Code   146  gpdma_lpc17xx.o(i.GPDMA_Initialize)
+    GPDMA_PeripheralSelect                   0x00000a55   Thumb Code    62  gpdma_lpc17xx.o(i.GPDMA_PeripheralSelect)
+    GPDMA_Uninitialize                       0x00000a99   Thumb Code   116  gpdma_lpc17xx.o(i.GPDMA_Uninitialize)
+    GPIO_Init                                0x00000b19   Thumb Code    32  main.o(i.GPIO_Init)
+    GPIO_PinWrite                            0x00000b3d   Thumb Code    36  gpio_lpc17xx.o(i.GPIO_PinWrite)
+    GPIO_SetDir                              0x00000b65   Thumb Code    52  gpio_lpc17xx.o(i.GPIO_SetDir)
+    PIN_Configure                            0x00000c25   Thumb Code   246  pin_lpc17xx.o(i.PIN_Configure)
+    RTC_IRQHandler                           0x00000d21   Thumb Code    20  main.o(i.RTC_IRQHandler)
+    RTC_Init                                 0x00000d3d   Thumb Code    18  main.o(i.RTC_Init)
+    SSP0_GPDMA_Rx_SignalEvent                0x00000d6d   Thumb Code    14  ssp_lpc17xx.o(i.SSP0_GPDMA_Rx_SignalEvent)
+    SSP0_GPDMA_Tx_SignalEvent                0x00000d81   Thumb Code    14  ssp_lpc17xx.o(i.SSP0_GPDMA_Tx_SignalEvent)
+    SSP0_IRQHandler                          0x00000db5   Thumb Code    10  ssp_lpc17xx.o(i.SSP0_IRQHandler)
+    SSPx_GPDMA_Rx_SignalEvent                0x00001383   Thumb Code    54  ssp_lpc17xx.o(i.SSPx_GPDMA_Rx_SignalEvent)
+    SSPx_GPDMA_Tx_SignalEvent                0x000013b9   Thumb Code    28  ssp_lpc17xx.o(i.SSPx_GPDMA_Tx_SignalEvent)
+    SysTick_Handler                          0x00001c79   Thumb Code    12  main.o(i.SysTick_Handler)
+    SystemInit                               0x00001c89   Thumb Code   304  system_lpc17xx.o(i.SystemInit)
+    TIMER0_IRQHandler                        0x00001dc9   Thumb Code    16  main.o(i.TIMER0_IRQHandler)
+    Timer_Init                               0x00001dd9   Thumb Code    30  main.o(i.Timer_Init)
+    UART0_IRQHandler                         0x00001dfd   Thumb Code    10  uart_lpc17xx.o(i.UART0_IRQHandler)
+    UART_Init                                0x00001e0d   Thumb Code    94  uart.o(i.UART_Init)
+    UART_Send                                0x00001e79   Thumb Code    36  uart.o(i.UART_Send)
+    UART_SendNum                             0x00001ea1   Thumb Code    34  uart.o(i.UART_SendNum)
+    USART0_GPDMA_Rx_Event                    0x00001ee1   Thumb Code    14  uart_lpc17xx.o(i.USART0_GPDMA_Rx_Event)
+    USART0_GPDMA_Tx_Event                    0x00001ef5   Thumb Code    14  uart_lpc17xx.o(i.USART0_GPDMA_Tx_Event)
+    USART_SetBaudrate                        0x00003151   Thumb Code   302  uart_lpc17xx.o(i.USART_SetBaudrate)
+    delay_ms                                 0x000034ff   Thumb Code    30  lcd_ili9325.o(i.delay_ms)
+    displayTextire                           0x0000351d   Thumb Code    88  lcd.o(i.displayTextire)
+    initADC                                  0x00003585   Thumb Code    76  adc.o(i.initADC)
+    initLCD                                  0x000035dd   Thumb Code    54  lcd.o(i.initLCD)
+    init_ILI9325                             0x0000361d   Thumb Code   468  lcd_ili9325.o(i.init_ILI9325)
+    lcdConfiguration                         0x000037f1   Thumb Code    36  open1768_lcd.o(i.lcdConfiguration)
+    lcdRead                                  0x00003819   Thumb Code    70  open1768_lcd.o(i.lcdRead)
+    lcdReadData                              0x00003865   Thumb Code    50  open1768_lcd.o(i.lcdReadData)
+    lcdReadReg                               0x0000389d   Thumb Code    20  open1768_lcd.o(i.lcdReadReg)
+    lcdSend                                  0x000038b1   Thumb Code    40  open1768_lcd.o(i.lcdSend)
+    lcdWriteData                             0x000038dd   Thumb Code    50  open1768_lcd.o(i.lcdWriteData)
+    lcdWriteIndex                            0x00003915   Thumb Code    60  open1768_lcd.o(i.lcdWriteIndex)
+    lcdWriteReg                              0x00003955   Thumb Code    20  open1768_lcd.o(i.lcdWriteReg)
+    main                                     0x00003969   Thumb Code   126  main.o(i.main)
+    wait_delay                               0x00003a35   Thumb Code    18  open1768_lcd.o(i.wait_delay)
+    Driver_SPI0                              0x00003a9c   Data          44  ssp_lpc17xx.o(.constdata)
+    Driver_USART0                            0x00003c60   Data          56  uart_lpc17xx.o(.constdata)
+    Region$$Table$$Base                      0x00003cc0   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00003cf0   Number         0  anon$$obj.o(Region$$Table)
     sysTicks                                 0x2007c000   Data           4  main.o(.data)
-    buttonClicked                            0x2007c004   Data           1  main.o(.data)
-    SystemCoreClock                          0x2007c02c   Data           4  system_lpc17xx.o(.data)
-    __libspace_start                         0x2007c130   Data          96  libspace.o(.bss)
-    __temporary_stack_top$libspace           0x2007c190   Data           0  libspace.o(.bss)
+    buttonClicked                            0x2007c00c   Data           1  buttons.o(.data)
+    SystemCoreClock                          0x2007c030   Data           4  system_lpc17xx.o(.data)
+    __libspace_start                         0x2007c134   Data          96  libspace.o(.bss)
+    __temporary_stack_top$libspace           0x2007c194   Data           0  libspace.o(.bss)
 
 
 
@@ -1215,255 +1164,227 @@ Memory Map of the image
 
   Image Entry point : 0x000000cd
 
-  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x0000561c, Max: 0x00080000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00003d24, Max: 0x00080000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x000055ec, Max: 0x00080000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00003cf0, Max: 0x00080000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x00000000   0x00000000   0x000000cc   Data   RO         1030    RESET               startup_lpc17xx.o
-    0x000000cc   0x000000cc   0x00000008   Code   RO         1138  * !!!main             c_w.l(__main.o)
-    0x000000d4   0x000000d4   0x00000034   Code   RO         1357    !!!scatter          c_w.l(__scatter.o)
-    0x00000108   0x00000108   0x0000001a   Code   RO         1359    !!handler_copy      c_w.l(__scatter_copy.o)
+    0x00000000   0x00000000   0x000000cc   Data   RO         1087    RESET               startup_lpc17xx.o
+    0x000000cc   0x000000cc   0x00000008   Code   RO         1193  * !!!main             c_w.l(__main.o)
+    0x000000d4   0x000000d4   0x00000034   Code   RO         1414    !!!scatter          c_w.l(__scatter.o)
+    0x00000108   0x00000108   0x0000001a   Code   RO         1416    !!handler_copy      c_w.l(__scatter_copy.o)
     0x00000122   0x00000122   0x00000002   PAD
-    0x00000124   0x00000124   0x0000001c   Code   RO         1361    !!handler_zi        c_w.l(__scatter_zi.o)
-    0x00000140   0x00000140   0x00000000   Code   RO         1129    .ARM.Collect$$_printf_percent$$00000000  c_w.l(_printf_percent.o)
-    0x00000140   0x00000140   0x00000006   Code   RO         1128    .ARM.Collect$$_printf_percent$$00000009  c_w.l(_printf_d.o)
-    0x00000146   0x00000146   0x00000006   Code   RO         1127    .ARM.Collect$$_printf_percent$$0000000C  c_w.l(_printf_x.o)
-    0x0000014c   0x0000014c   0x00000004   Code   RO         1183    .ARM.Collect$$_printf_percent$$00000017  c_w.l(_printf_percent_end.o)
-    0x00000150   0x00000150   0x00000002   Code   RO         1227    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
-    0x00000152   0x00000152   0x00000000   Code   RO         1240    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
-    0x00000152   0x00000152   0x00000000   Code   RO         1242    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
-    0x00000152   0x00000152   0x00000000   Code   RO         1245    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
-    0x00000152   0x00000152   0x00000000   Code   RO         1247    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
-    0x00000152   0x00000152   0x00000000   Code   RO         1249    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
-    0x00000152   0x00000152   0x00000000   Code   RO         1252    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
-    0x00000152   0x00000152   0x00000000   Code   RO         1254    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
-    0x00000152   0x00000152   0x00000000   Code   RO         1256    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
-    0x00000152   0x00000152   0x00000000   Code   RO         1258    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
-    0x00000152   0x00000152   0x00000000   Code   RO         1260    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
-    0x00000152   0x00000152   0x00000000   Code   RO         1262    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
-    0x00000152   0x00000152   0x00000000   Code   RO         1264    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
-    0x00000152   0x00000152   0x00000000   Code   RO         1266    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
-    0x00000152   0x00000152   0x00000000   Code   RO         1268    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
-    0x00000152   0x00000152   0x00000000   Code   RO         1270    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
-    0x00000152   0x00000152   0x00000000   Code   RO         1272    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
-    0x00000152   0x00000152   0x00000000   Code   RO         1276    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
-    0x00000152   0x00000152   0x00000000   Code   RO         1278    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
-    0x00000152   0x00000152   0x00000000   Code   RO         1280    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
-    0x00000152   0x00000152   0x00000000   Code   RO         1282    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
-    0x00000152   0x00000152   0x00000002   Code   RO         1283    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
-    0x00000154   0x00000154   0x00000002   Code   RO         1314    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
-    0x00000156   0x00000156   0x00000000   Code   RO         1340    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
-    0x00000156   0x00000156   0x00000000   Code   RO         1342    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
-    0x00000156   0x00000156   0x00000000   Code   RO         1345    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
-    0x00000156   0x00000156   0x00000000   Code   RO         1348    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
-    0x00000156   0x00000156   0x00000000   Code   RO         1350    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
-    0x00000156   0x00000156   0x00000000   Code   RO         1353    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
-    0x00000156   0x00000156   0x00000002   Code   RO         1354    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
-    0x00000158   0x00000158   0x00000000   Code   RO         1172    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
-    0x00000158   0x00000158   0x00000000   Code   RO         1196    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
-    0x00000158   0x00000158   0x00000006   Code   RO         1208    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
-    0x0000015e   0x0000015e   0x00000000   Code   RO         1198    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
-    0x0000015e   0x0000015e   0x00000004   Code   RO         1199    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
-    0x00000162   0x00000162   0x00000000   Code   RO         1201    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
-    0x00000162   0x00000162   0x00000008   Code   RO         1202    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
-    0x0000016a   0x0000016a   0x00000002   Code   RO         1231    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
-    0x0000016c   0x0000016c   0x00000000   Code   RO         1287    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
-    0x0000016c   0x0000016c   0x00000004   Code   RO         1288    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
-    0x00000170   0x00000170   0x00000006   Code   RO         1289    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x00000124   0x00000124   0x0000001c   Code   RO         1418    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x00000140   0x00000140   0x00000000   Code   RO         1186    .ARM.Collect$$_printf_percent$$00000000  c_w.l(_printf_percent.o)
+    0x00000140   0x00000140   0x00000006   Code   RO         1185    .ARM.Collect$$_printf_percent$$00000009  c_w.l(_printf_d.o)
+    0x00000146   0x00000146   0x00000006   Code   RO         1184    .ARM.Collect$$_printf_percent$$0000000C  c_w.l(_printf_x.o)
+    0x0000014c   0x0000014c   0x00000004   Code   RO         1238    .ARM.Collect$$_printf_percent$$00000017  c_w.l(_printf_percent_end.o)
+    0x00000150   0x00000150   0x00000002   Code   RO         1284    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x00000152   0x00000152   0x00000000   Code   RO         1297    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
+    0x00000152   0x00000152   0x00000000   Code   RO         1299    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
+    0x00000152   0x00000152   0x00000000   Code   RO         1302    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
+    0x00000152   0x00000152   0x00000000   Code   RO         1304    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x00000152   0x00000152   0x00000000   Code   RO         1306    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
+    0x00000152   0x00000152   0x00000000   Code   RO         1309    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
+    0x00000152   0x00000152   0x00000000   Code   RO         1311    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x00000152   0x00000152   0x00000000   Code   RO         1313    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x00000152   0x00000152   0x00000000   Code   RO         1315    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x00000152   0x00000152   0x00000000   Code   RO         1317    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x00000152   0x00000152   0x00000000   Code   RO         1319    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x00000152   0x00000152   0x00000000   Code   RO         1321    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x00000152   0x00000152   0x00000000   Code   RO         1323    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x00000152   0x00000152   0x00000000   Code   RO         1325    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x00000152   0x00000152   0x00000000   Code   RO         1327    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x00000152   0x00000152   0x00000000   Code   RO         1329    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
+    0x00000152   0x00000152   0x00000000   Code   RO         1333    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
+    0x00000152   0x00000152   0x00000000   Code   RO         1335    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x00000152   0x00000152   0x00000000   Code   RO         1337    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x00000152   0x00000152   0x00000000   Code   RO         1339    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
+    0x00000152   0x00000152   0x00000002   Code   RO         1340    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
+    0x00000154   0x00000154   0x00000002   Code   RO         1371    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x00000156   0x00000156   0x00000000   Code   RO         1397    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
+    0x00000156   0x00000156   0x00000000   Code   RO         1399    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
+    0x00000156   0x00000156   0x00000000   Code   RO         1402    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
+    0x00000156   0x00000156   0x00000000   Code   RO         1405    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
+    0x00000156   0x00000156   0x00000000   Code   RO         1407    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
+    0x00000156   0x00000156   0x00000000   Code   RO         1410    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x00000156   0x00000156   0x00000002   Code   RO         1411    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
+    0x00000158   0x00000158   0x00000000   Code   RO         1227    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
+    0x00000158   0x00000158   0x00000000   Code   RO         1253    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
+    0x00000158   0x00000158   0x00000006   Code   RO         1265    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
+    0x0000015e   0x0000015e   0x00000000   Code   RO         1255    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
+    0x0000015e   0x0000015e   0x00000004   Code   RO         1256    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
+    0x00000162   0x00000162   0x00000000   Code   RO         1258    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
+    0x00000162   0x00000162   0x00000008   Code   RO         1259    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
+    0x0000016a   0x0000016a   0x00000002   Code   RO         1288    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x0000016c   0x0000016c   0x00000000   Code   RO         1344    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x0000016c   0x0000016c   0x00000004   Code   RO         1345    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x00000170   0x00000170   0x00000006   Code   RO         1346    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
     0x00000176   0x00000176   0x00000002   PAD
-    0x00000178   0x00000178   0x0000003c   Code   RO         1032    .text               startup_lpc17xx.o
-    0x000001b4   0x000001b4   0x000000ee   Code   RO         1076    .text               c_w.l(lludivv7m.o)
+    0x00000178   0x00000178   0x0000003c   Code   RO         1089    .text               startup_lpc17xx.o
+    0x000001b4   0x000001b4   0x000000ee   Code   RO         1133    .text               c_w.l(lludivv7m.o)
     0x000002a2   0x000002a2   0x00000002   PAD
-    0x000002a4   0x000002a4   0x00000028   Code   RO         1080    .text               c_w.l(noretval__2sprintf.o)
-    0x000002cc   0x000002cc   0x00000006   Code   RO         1136    .text               c_w.l(heapauxi.o)
-    0x000002d2   0x000002d2   0x0000000a   Code   RO         1181    .text               c_w.l(_sputc.o)
-    0x000002dc   0x000002dc   0x00000012   Code   RO         1216    .text               c_w.l(exit.o)
+    0x000002a4   0x000002a4   0x00000028   Code   RO         1137    .text               c_w.l(noretval__2sprintf.o)
+    0x000002cc   0x000002cc   0x00000006   Code   RO         1191    .text               c_w.l(heapauxi.o)
+    0x000002d2   0x000002d2   0x0000000a   Code   RO         1236    .text               c_w.l(_sputc.o)
+    0x000002dc   0x000002dc   0x00000012   Code   RO         1273    .text               c_w.l(exit.o)
     0x000002ee   0x000002ee   0x00000002   PAD
-    0x000002f0   0x000002f0   0x00000008   Code   RO         1228    .text               c_w.l(libspace.o)
-    0x000002f8   0x000002f8   0x00000002   Code   RO         1303    .text               c_w.l(use_no_semi.o)
-    0x000002fa   0x000002fa   0x00000000   Code   RO         1305    .text               c_w.l(indicate_semi.o)
-    0x000002fa   0x000002fa   0x00000000   Code   RO         1194    x$fpl$usenofp       fz_ws.l(usenofp.o)
+    0x000002f0   0x000002f0   0x00000008   Code   RO         1285    .text               c_w.l(libspace.o)
+    0x000002f8   0x000002f8   0x00000002   Code   RO         1360    .text               c_w.l(use_no_semi.o)
+    0x000002fa   0x000002fa   0x00000000   Code   RO         1362    .text               c_w.l(indicate_semi.o)
     0x000002fa   0x000002fa   0x00000002   PAD
-    0x000002fc   0x000002fc   0x00000004   Code   RO         1031    .ARM.__at_0x02FC    startup_lpc17xx.o
-    0x00000300   0x00000300   0x00000068   Code   RO         1082    .text               c_w.l(__printf.o)
-    0x00000368   0x00000368   0x00000078   Code   RO         1084    .text               c_w.l(_printf_dec.o)
-    0x000003e0   0x000003e0   0x00000058   Code   RO         1089    .text               c_w.l(_printf_hex_int.o)
-    0x00000438   0x00000438   0x0000008a   Code   RO         1130    .text               c_w.l(rt_memcpy_v6.o)
-    0x000004c2   0x000004c2   0x00000064   Code   RO         1132    .text               c_w.l(rt_memcpy_w.o)
-    0x00000526   0x00000526   0x0000004e   Code   RO         1134    .text               c_w.l(rt_memclr_w.o)
-    0x00000574   0x00000574   0x000000b2   Code   RO         1177    .text               c_w.l(_printf_intcommon.o)
-    0x00000626   0x00000626   0x00000002   PAD
-    0x00000628   0x00000628   0x00000030   Code   RO         1179    .text               c_w.l(_printf_char_common.o)
-    0x00000658   0x00000658   0x0000004a   Code   RO         1214    .text               c_w.l(sys_stackheap_outer.o)
-    0x000006a2   0x000006a2   0x00000002   PAD
-    0x000006a4   0x000006a4   0x0000000c   Code   RO         1284    .text               c_w.l(sys_exit.o)
-    0x000006b0   0x000006b0   0x00000020   Code   RO          851    i.Clear_Channel_active_flag  gpdma_lpc17xx.o
-    0x000006d0   0x000006d0   0x00000180   Code   RO          852    i.DMA_IRQHandler    gpdma_lpc17xx.o
-    0x00000850   0x00000850   0x00000070   Code   RO          263    i.EINT0_IRQHandler  main.o
-    0x000008c0   0x000008c0   0x00000054   Code   RO          264    i.EINT3_IRQHandler  main.o
-    0x00000914   0x00000914   0x000000f4   Code   RO          853    i.GPDMA_ChannelConfigure  gpdma_lpc17xx.o
-    0x00000a08   0x00000a08   0x00000030   Code   RO          854    i.GPDMA_ChannelDisable  gpdma_lpc17xx.o
-    0x00000a38   0x00000a38   0x00000030   Code   RO          856    i.GPDMA_ChannelGetCount  gpdma_lpc17xx.o
-    0x00000a68   0x00000a68   0x000000a8   Code   RO          858    i.GPDMA_Initialize  gpdma_lpc17xx.o
-    0x00000b10   0x00000b10   0x00000044   Code   RO          859    i.GPDMA_PeripheralSelect  gpdma_lpc17xx.o
-    0x00000b54   0x00000b54   0x00000080   Code   RO          860    i.GPDMA_Uninitialize  gpdma_lpc17xx.o
-    0x00000bd4   0x00000bd4   0x00000024   Code   RO          265    i.GPIO_Init         main.o
-    0x00000bf8   0x00000bf8   0x00000028   Code   RO          942    i.GPIO_PinWrite     gpio_lpc17xx.o
-    0x00000c20   0x00000c20   0x00000038   Code   RO          946    i.GPIO_SetDir       gpio_lpc17xx.o
-    0x00000c58   0x00000c58   0x0000002c   Code   RO            1    i.GetASCIICode      asciilib.o
-    0x00000c84   0x00000c84   0x00000044   Code   RO          456    i.GetSSPClockFreq   ssp_lpc17xx.o
-    0x00000cc8   0x00000cc8   0x00000044   Code   RO          640    i.GetUsartClockFreq  uart_lpc17xx.o
-    0x00000d0c   0x00000d0c   0x00000058   Code   RO          266    i.KEY2_Init         main.o
-    0x00000d64   0x00000d64   0x00000080   Code   RO          267    i.OnClikcTask       main.o
-    0x00000de4   0x00000de4   0x000000fc   Code   RO          995    i.PIN_Configure     pin_lpc17xx.o
-    0x00000ee0   0x00000ee0   0x00000044   Code   RO          268    i.RTC_IRQHandler    main.o
-    0x00000f24   0x00000f24   0x00000018   Code   RO          269    i.RTC_Init          main.o
-    0x00000f3c   0x00000f3c   0x00000018   Code   RO          457    i.SSP0_Control      ssp_lpc17xx.o
-    0x00000f54   0x00000f54   0x00000014   Code   RO          458    i.SSP0_GPDMA_Rx_SignalEvent  ssp_lpc17xx.o
-    0x00000f68   0x00000f68   0x00000014   Code   RO          459    i.SSP0_GPDMA_Tx_SignalEvent  ssp_lpc17xx.o
-    0x00000f7c   0x00000f7c   0x00000010   Code   RO          460    i.SSP0_GetDataCount  ssp_lpc17xx.o
-    0x00000f8c   0x00000f8c   0x00000010   Code   RO          461    i.SSP0_GetStatus    ssp_lpc17xx.o
-    0x00000f9c   0x00000f9c   0x00000010   Code   RO          462    i.SSP0_IRQHandler   ssp_lpc17xx.o
-    0x00000fac   0x00000fac   0x00000014   Code   RO          463    i.SSP0_Initialize   ssp_lpc17xx.o
-    0x00000fc0   0x00000fc0   0x00000014   Code   RO          464    i.SSP0_PowerControl  ssp_lpc17xx.o
-    0x00000fd4   0x00000fd4   0x00000018   Code   RO          465    i.SSP0_Receive      ssp_lpc17xx.o
-    0x00000fec   0x00000fec   0x00000018   Code   RO          466    i.SSP0_Send         ssp_lpc17xx.o
-    0x00001004   0x00001004   0x0000001c   Code   RO          467    i.SSP0_Transfer     ssp_lpc17xx.o
-    0x00001020   0x00001020   0x00000010   Code   RO          468    i.SSP0_Uninitialize  ssp_lpc17xx.o
-    0x00001030   0x00001030   0x0000000c   Code   RO          469    i.SSP_GetCapabilities  ssp_lpc17xx.o
-    0x0000103c   0x0000103c   0x00000010   Code   RO          470    i.SSP_GetVersion    ssp_lpc17xx.o
-    0x0000104c   0x0000104c   0x0000051e   Code   RO          471    i.SSPx_Control      ssp_lpc17xx.o
-    0x0000156a   0x0000156a   0x00000036   Code   RO          472    i.SSPx_GPDMA_Rx_SignalEvent  ssp_lpc17xx.o
-    0x000015a0   0x000015a0   0x0000001c   Code   RO          473    i.SSPx_GPDMA_Tx_SignalEvent  ssp_lpc17xx.o
-    0x000015bc   0x000015bc   0x0000002c   Code   RO          474    i.SSPx_GetDataCount  ssp_lpc17xx.o
-    0x000015e8   0x000015e8   0x0000005a   Code   RO          475    i.SSPx_GetStatus    ssp_lpc17xx.o
-    0x00001642   0x00001642   0x00000104   Code   RO          476    i.SSPx_IRQHandler   ssp_lpc17xx.o
-    0x00001746   0x00001746   0x000000a8   Code   RO          477    i.SSPx_Initialize   ssp_lpc17xx.o
-    0x000017ee   0x000017ee   0x00000002   PAD
-    0x000017f0   0x000017f0   0x000001c4   Code   RO          478    i.SSPx_PowerControl  ssp_lpc17xx.o
-    0x000019b4   0x000019b4   0x0000015c   Code   RO          479    i.SSPx_Receive      ssp_lpc17xx.o
-    0x00001b10   0x00001b10   0x00000154   Code   RO          480    i.SSPx_Send         ssp_lpc17xx.o
-    0x00001c64   0x00001c64   0x00000152   Code   RO          481    i.SSPx_Transfer     ssp_lpc17xx.o
-    0x00001db6   0x00001db6   0x00000070   Code   RO          482    i.SSPx_Uninitialize  ssp_lpc17xx.o
-    0x00001e26   0x00001e26   0x00000002   PAD
-    0x00001e28   0x00001e28   0x00000038   Code   RO          861    i.Set_Channel_active_flag  gpdma_lpc17xx.o
-    0x00001e60   0x00001e60   0x00000010   Code   RO          270    i.SysTick_Handler   main.o
-    0x00001e70   0x00001e70   0x00000140   Code   RO         1042    i.SystemInit        system_lpc17xx.o
-    0x00001fb0   0x00001fb0   0x0000001c   Code   RO          271    i.TIMER0_IRQHandler  main.o
-    0x00001fcc   0x00001fcc   0x00000024   Code   RO          272    i.Timer_Init        main.o
-    0x00001ff0   0x00001ff0   0x00000010   Code   RO          641    i.UART0_IRQHandler  uart_lpc17xx.o
-    0x00002000   0x00002000   0x0000006c   Code   RO          177    i.UART_Init         uart.o
-    0x0000206c   0x0000206c   0x0000004c   Code   RO          273    i.UART_ReadTask     main.o
-    0x000020b8   0x000020b8   0x00000028   Code   RO          178    i.UART_Send         uart.o
-    0x000020e0   0x000020e0   0x00000028   Code   RO          179    i.UART_SendNum      uart.o
-    0x00002108   0x00002108   0x00000018   Code   RO          642    i.USART0_Control    uart_lpc17xx.o
-    0x00002120   0x00002120   0x00000014   Code   RO          643    i.USART0_GPDMA_Rx_Event  uart_lpc17xx.o
-    0x00002134   0x00002134   0x00000014   Code   RO          644    i.USART0_GPDMA_Tx_Event  uart_lpc17xx.o
-    0x00002148   0x00002148   0x00000010   Code   RO          645    i.USART0_GetCapabilities  uart_lpc17xx.o
-    0x00002158   0x00002158   0x00000010   Code   RO          646    i.USART0_GetModemStatus  uart_lpc17xx.o
-    0x00002168   0x00002168   0x00000010   Code   RO          647    i.USART0_GetRxCount  uart_lpc17xx.o
-    0x00002178   0x00002178   0x00000010   Code   RO          648    i.USART0_GetStatus  uart_lpc17xx.o
-    0x00002188   0x00002188   0x00000010   Code   RO          649    i.USART0_GetTxCount  uart_lpc17xx.o
-    0x00002198   0x00002198   0x00000014   Code   RO          650    i.USART0_Initialize  uart_lpc17xx.o
-    0x000021ac   0x000021ac   0x00000014   Code   RO          651    i.USART0_PowerControl  uart_lpc17xx.o
-    0x000021c0   0x000021c0   0x00000018   Code   RO          652    i.USART0_Receive    uart_lpc17xx.o
-    0x000021d8   0x000021d8   0x00000018   Code   RO          653    i.USART0_Send       uart_lpc17xx.o
-    0x000021f0   0x000021f0   0x00000014   Code   RO          654    i.USART0_SetModemControl  uart_lpc17xx.o
-    0x00002204   0x00002204   0x0000001c   Code   RO          655    i.USART0_Transfer   uart_lpc17xx.o
-    0x00002220   0x00002220   0x00000010   Code   RO          656    i.USART0_Uninitialize  uart_lpc17xx.o
-    0x00002230   0x00002230   0x00000644   Code   RO          657    i.USART_Control     uart_lpc17xx.o
-    0x00002874   0x00002874   0x00000086   Code   RO          658    i.USART_GPDMA_Rx_Event  uart_lpc17xx.o
-    0x000028fa   0x000028fa   0x0000004a   Code   RO          659    i.USART_GPDMA_Tx_Event  uart_lpc17xx.o
-    0x00002944   0x00002944   0x00000006   Code   RO          660    i.USART_GetCapabilities  uart_lpc17xx.o
-    0x0000294a   0x0000294a   0x000000ec   Code   RO          661    i.USART_GetModemStatus  uart_lpc17xx.o
-    0x00002a36   0x00002a36   0x0000001c   Code   RO          662    i.USART_GetRxCount  uart_lpc17xx.o
-    0x00002a52   0x00002a52   0x000000bc   Code   RO          663    i.USART_GetStatus   uart_lpc17xx.o
-    0x00002b0e   0x00002b0e   0x0000001c   Code   RO          664    i.USART_GetTxCount  uart_lpc17xx.o
-    0x00002b2a   0x00002b2a   0x0000021a   Code   RO          665    i.USART_IRQHandler  uart_lpc17xx.o
-    0x00002d44   0x00002d44   0x000000fe   Code   RO          666    i.USART_Initialize  uart_lpc17xx.o
-    0x00002e42   0x00002e42   0x00000002   PAD
-    0x00002e44   0x00002e44   0x00000238   Code   RO          667    i.USART_PowerControl  uart_lpc17xx.o
-    0x0000307c   0x0000307c   0x00000110   Code   RO          668    i.USART_Receive     uart_lpc17xx.o
-    0x0000318c   0x0000318c   0x00000068   Code   RO          669    i.USART_RxLineIntHandler  uart_lpc17xx.o
-    0x000031f4   0x000031f4   0x0000019c   Code   RO          670    i.USART_Send        uart_lpc17xx.o
-    0x00003390   0x00003390   0x00000134   Code   RO          671    i.USART_SetBaudrate  uart_lpc17xx.o
-    0x000034c4   0x000034c4   0x000000a0   Code   RO          672    i.USART_SetModemControl  uart_lpc17xx.o
-    0x00003564   0x00003564   0x0000007a   Code   RO          673    i.USART_Transfer    uart_lpc17xx.o
-    0x000035de   0x000035de   0x000000e2   Code   RO          674    i.USART_Uninitialize  uart_lpc17xx.o
-    0x000036c0   0x000036c0   0x00000010   Code   RO          675    i.USARTx_GetVersion  uart_lpc17xx.o
-    0x000036d0   0x000036d0   0x0000001c   Code   RO          483    i.__NVIC_ClearPendingIRQ  ssp_lpc17xx.o
-    0x000036ec   0x000036ec   0x0000001c   Code   RO          676    i.__NVIC_ClearPendingIRQ  uart_lpc17xx.o
-    0x00003708   0x00003708   0x0000001c   Code   RO          862    i.__NVIC_ClearPendingIRQ  gpdma_lpc17xx.o
-    0x00003724   0x00003724   0x0000001a   Code   RO          274    i.__NVIC_EnableIRQ  main.o
-    0x0000373e   0x0000373e   0x0000001e   Code   RO          144    i.delay_ms          lcd_ili9325.o
-    0x0000375c   0x0000375c   0x00000068   Code   RO           27    i.displayTextire    lcd.o
-    0x000037c4   0x000037c4   0x000000dc   Code   RO           29    i.drawLine          lcd.o
-    0x000038a0   0x000038a0   0x00000076   Code   RO           30    i.drawRectangle     lcd.o
-    0x00003916   0x00003916   0x000000a8   Code   RO           31    i.drawText          lcd.o
-    0x000039be   0x000039be   0x00000096   Code   RO           32    i.drawTextNoBg      lcd.o
-    0x00003a54   0x00003a54   0x00000040   Code   RO           33    i.initLCD           lcd.o
-    0x00003a94   0x00003a94   0x000001d4   Code   RO          145    i.init_ILI9325      lcd_ili9325.o
-    0x00003c68   0x00003c68   0x00000028   Code   RO          373    i.lcdConfiguration  open1768_lcd.o
-    0x00003c90   0x00003c90   0x0000004c   Code   RO          374    i.lcdRead           open1768_lcd.o
-    0x00003cdc   0x00003cdc   0x00000038   Code   RO          375    i.lcdReadData       open1768_lcd.o
-    0x00003d14   0x00003d14   0x00000014   Code   RO          376    i.lcdReadReg        open1768_lcd.o
-    0x00003d28   0x00003d28   0x0000002c   Code   RO          377    i.lcdSend           open1768_lcd.o
-    0x00003d54   0x00003d54   0x00000038   Code   RO          379    i.lcdWriteData      open1768_lcd.o
-    0x00003d8c   0x00003d8c   0x00000040   Code   RO          380    i.lcdWriteIndex     open1768_lcd.o
-    0x00003dcc   0x00003dcc   0x00000014   Code   RO          381    i.lcdWriteReg       open1768_lcd.o
-    0x00003de0   0x00003de0   0x000000e4   Code   RO          276    i.main              main.o
-    0x00003ec4   0x00003ec4   0x00000012   Code   RO          439    i.wait_delay        open1768_lcd.o
-    0x00003ed6   0x00003ed6   0x00000002   PAD
-    0x00003ed8   0x00003ed8   0x00000062   Code   RO         1140    x$fpl$d2f           fz_ws.l(d2f.o)
-    0x00003f3a   0x00003f3a   0x00000002   PAD
-    0x00003f3c   0x00003f3c   0x000002b0   Code   RO         1143    x$fpl$ddiv          fz_ws.l(ddiv.o)
-    0x000041ec   0x000041ec   0x0000002e   Code   RO         1147    x$fpl$dflt          fz_ws.l(dflt_clz.o)
-    0x0000421a   0x0000421a   0x00000002   PAD
-    0x0000421c   0x0000421c   0x00000154   Code   RO         1152    x$fpl$dmul          fz_ws.l(dmul.o)
-    0x00004370   0x00004370   0x0000009c   Code   RO         1184    x$fpl$dnaninf       fz_ws.l(dnaninf.o)
-    0x0000440c   0x0000440c   0x0000000c   Code   RO         1186    x$fpl$dretinf       fz_ws.l(dretinf.o)
-    0x00004418   0x00004418   0x000000c4   Code   RO         1154    x$fpl$fadd          fz_ws.l(faddsub_clz.o)
-    0x000044dc   0x000044dc   0x00000018   Code   RO         1188    x$fpl$fcmpinf       fz_ws.l(fcmpi.o)
-    0x000044f4   0x000044f4   0x0000003e   Code   RO         1160    x$fpl$ffixu         fz_ws.l(ffixu.o)
-    0x00004532   0x00004532   0x00000002   PAD
-    0x00004534   0x00004534   0x00000030   Code   RO         1165    x$fpl$fflt          fz_ws.l(fflt_clz.o)
-    0x00004564   0x00004564   0x00000068   Code   RO         1170    x$fpl$fleqf         fz_ws.l(fleqf.o)
-    0x000045cc   0x000045cc   0x0000008c   Code   RO         1190    x$fpl$fnaninf       fz_ws.l(fnaninf.o)
-    0x00004658   0x00004658   0x0000000a   Code   RO         1192    x$fpl$fretinf       fz_ws.l(fretinf.o)
-    0x00004662   0x00004662   0x00000002   PAD
-    0x00004664   0x00004664   0x000000ea   Code   RO         1156    x$fpl$fsub          fz_ws.l(faddsub_clz.o)
-    0x0000474e   0x0000474e   0x00000be0   Data   RO            2    .constdata          asciilib.o
-    0x0000532e   0x0000532e   0x00000002   PAD
-    0x00005330   0x00005330   0x00000014   Data   RO          277    .constdata          main.o
-    0x00005344   0x00005344   0x00000080   Data   RO          485    .constdata          ssp_lpc17xx.o
-    0x000053c4   0x000053c4   0x000001d0   Data   RO          678    .constdata          uart_lpc17xx.o
-    0x00005594   0x00005594   0x00000028   Data   RO         1090    .constdata          c_w.l(_printf_hex_int.o)
-    0x000055bc   0x000055bc   0x00000030   Data   RO         1355    Region$$Table       anon$$obj.o
+    0x000002fc   0x000002fc   0x00000004   Code   RO         1088    .ARM.__at_0x02FC    startup_lpc17xx.o
+    0x00000300   0x00000300   0x00000068   Code   RO         1139    .text               c_w.l(__printf.o)
+    0x00000368   0x00000368   0x00000078   Code   RO         1141    .text               c_w.l(_printf_dec.o)
+    0x000003e0   0x000003e0   0x00000058   Code   RO         1146    .text               c_w.l(_printf_hex_int.o)
+    0x00000438   0x00000438   0x0000004e   Code   RO         1189    .text               c_w.l(rt_memclr_w.o)
+    0x00000486   0x00000486   0x000000b2   Code   RO         1232    .text               c_w.l(_printf_intcommon.o)
+    0x00000538   0x00000538   0x00000030   Code   RO         1234    .text               c_w.l(_printf_char_common.o)
+    0x00000568   0x00000568   0x0000004a   Code   RO         1271    .text               c_w.l(sys_stackheap_outer.o)
+    0x000005b2   0x000005b2   0x00000002   PAD
+    0x000005b4   0x000005b4   0x0000000c   Code   RO         1341    .text               c_w.l(sys_exit.o)
+    0x000005c0   0x000005c0   0x00000020   Code   RO          477    i.ADC_IRQHandler    adc.o
+    0x000005e0   0x000005e0   0x00000014   Code   RO          478    i.ADC_StartConvertion  adc.o
+    0x000005f4   0x000005f4   0x00000020   Code   RO          908    i.Clear_Channel_active_flag  gpdma_lpc17xx.o
+    0x00000614   0x00000614   0x00000180   Code   RO          909    i.DMA_IRQHandler    gpdma_lpc17xx.o
+    0x00000794   0x00000794   0x00000070   Code   RO          437    i.EINT0_IRQHandler  buttons.o
+    0x00000804   0x00000804   0x00000054   Code   RO          270    i.EINT3_IRQHandler  main.o
+    0x00000858   0x00000858   0x000000f4   Code   RO          910    i.GPDMA_ChannelConfigure  gpdma_lpc17xx.o
+    0x0000094c   0x0000094c   0x00000030   Code   RO          911    i.GPDMA_ChannelDisable  gpdma_lpc17xx.o
+    0x0000097c   0x0000097c   0x00000030   Code   RO          913    i.GPDMA_ChannelGetCount  gpdma_lpc17xx.o
+    0x000009ac   0x000009ac   0x000000a8   Code   RO          915    i.GPDMA_Initialize  gpdma_lpc17xx.o
+    0x00000a54   0x00000a54   0x00000044   Code   RO          916    i.GPDMA_PeripheralSelect  gpdma_lpc17xx.o
+    0x00000a98   0x00000a98   0x00000080   Code   RO          917    i.GPDMA_Uninitialize  gpdma_lpc17xx.o
+    0x00000b18   0x00000b18   0x00000024   Code   RO          271    i.GPIO_Init         main.o
+    0x00000b3c   0x00000b3c   0x00000028   Code   RO          999    i.GPIO_PinWrite     gpio_lpc17xx.o
+    0x00000b64   0x00000b64   0x00000038   Code   RO         1003    i.GPIO_SetDir       gpio_lpc17xx.o
+    0x00000b9c   0x00000b9c   0x00000044   Code   RO          513    i.GetSSPClockFreq   ssp_lpc17xx.o
+    0x00000be0   0x00000be0   0x00000044   Code   RO          697    i.GetUsartClockFreq  uart_lpc17xx.o
+    0x00000c24   0x00000c24   0x000000fc   Code   RO         1052    i.PIN_Configure     pin_lpc17xx.o
+    0x00000d20   0x00000d20   0x0000001c   Code   RO          272    i.RTC_IRQHandler    main.o
+    0x00000d3c   0x00000d3c   0x00000018   Code   RO          273    i.RTC_Init          main.o
+    0x00000d54   0x00000d54   0x00000018   Code   RO          514    i.SSP0_Control      ssp_lpc17xx.o
+    0x00000d6c   0x00000d6c   0x00000014   Code   RO          515    i.SSP0_GPDMA_Rx_SignalEvent  ssp_lpc17xx.o
+    0x00000d80   0x00000d80   0x00000014   Code   RO          516    i.SSP0_GPDMA_Tx_SignalEvent  ssp_lpc17xx.o
+    0x00000d94   0x00000d94   0x00000010   Code   RO          517    i.SSP0_GetDataCount  ssp_lpc17xx.o
+    0x00000da4   0x00000da4   0x00000010   Code   RO          518    i.SSP0_GetStatus    ssp_lpc17xx.o
+    0x00000db4   0x00000db4   0x00000010   Code   RO          519    i.SSP0_IRQHandler   ssp_lpc17xx.o
+    0x00000dc4   0x00000dc4   0x00000014   Code   RO          520    i.SSP0_Initialize   ssp_lpc17xx.o
+    0x00000dd8   0x00000dd8   0x00000014   Code   RO          521    i.SSP0_PowerControl  ssp_lpc17xx.o
+    0x00000dec   0x00000dec   0x00000018   Code   RO          522    i.SSP0_Receive      ssp_lpc17xx.o
+    0x00000e04   0x00000e04   0x00000018   Code   RO          523    i.SSP0_Send         ssp_lpc17xx.o
+    0x00000e1c   0x00000e1c   0x0000001c   Code   RO          524    i.SSP0_Transfer     ssp_lpc17xx.o
+    0x00000e38   0x00000e38   0x00000010   Code   RO          525    i.SSP0_Uninitialize  ssp_lpc17xx.o
+    0x00000e48   0x00000e48   0x0000000c   Code   RO          526    i.SSP_GetCapabilities  ssp_lpc17xx.o
+    0x00000e54   0x00000e54   0x00000010   Code   RO          527    i.SSP_GetVersion    ssp_lpc17xx.o
+    0x00000e64   0x00000e64   0x0000051e   Code   RO          528    i.SSPx_Control      ssp_lpc17xx.o
+    0x00001382   0x00001382   0x00000036   Code   RO          529    i.SSPx_GPDMA_Rx_SignalEvent  ssp_lpc17xx.o
+    0x000013b8   0x000013b8   0x0000001c   Code   RO          530    i.SSPx_GPDMA_Tx_SignalEvent  ssp_lpc17xx.o
+    0x000013d4   0x000013d4   0x0000002c   Code   RO          531    i.SSPx_GetDataCount  ssp_lpc17xx.o
+    0x00001400   0x00001400   0x0000005a   Code   RO          532    i.SSPx_GetStatus    ssp_lpc17xx.o
+    0x0000145a   0x0000145a   0x00000104   Code   RO          533    i.SSPx_IRQHandler   ssp_lpc17xx.o
+    0x0000155e   0x0000155e   0x000000a8   Code   RO          534    i.SSPx_Initialize   ssp_lpc17xx.o
+    0x00001606   0x00001606   0x00000002   PAD
+    0x00001608   0x00001608   0x000001c4   Code   RO          535    i.SSPx_PowerControl  ssp_lpc17xx.o
+    0x000017cc   0x000017cc   0x0000015c   Code   RO          536    i.SSPx_Receive      ssp_lpc17xx.o
+    0x00001928   0x00001928   0x00000154   Code   RO          537    i.SSPx_Send         ssp_lpc17xx.o
+    0x00001a7c   0x00001a7c   0x00000152   Code   RO          538    i.SSPx_Transfer     ssp_lpc17xx.o
+    0x00001bce   0x00001bce   0x00000070   Code   RO          539    i.SSPx_Uninitialize  ssp_lpc17xx.o
+    0x00001c3e   0x00001c3e   0x00000002   PAD
+    0x00001c40   0x00001c40   0x00000038   Code   RO          918    i.Set_Channel_active_flag  gpdma_lpc17xx.o
+    0x00001c78   0x00001c78   0x00000010   Code   RO          274    i.SysTick_Handler   main.o
+    0x00001c88   0x00001c88   0x00000140   Code   RO         1099    i.SystemInit        system_lpc17xx.o
+    0x00001dc8   0x00001dc8   0x00000010   Code   RO          275    i.TIMER0_IRQHandler  main.o
+    0x00001dd8   0x00001dd8   0x00000024   Code   RO          276    i.Timer_Init        main.o
+    0x00001dfc   0x00001dfc   0x00000010   Code   RO          698    i.UART0_IRQHandler  uart_lpc17xx.o
+    0x00001e0c   0x00001e0c   0x0000006c   Code   RO          177    i.UART_Init         uart.o
+    0x00001e78   0x00001e78   0x00000028   Code   RO          179    i.UART_Send         uart.o
+    0x00001ea0   0x00001ea0   0x00000028   Code   RO          180    i.UART_SendNum      uart.o
+    0x00001ec8   0x00001ec8   0x00000018   Code   RO          699    i.USART0_Control    uart_lpc17xx.o
+    0x00001ee0   0x00001ee0   0x00000014   Code   RO          700    i.USART0_GPDMA_Rx_Event  uart_lpc17xx.o
+    0x00001ef4   0x00001ef4   0x00000014   Code   RO          701    i.USART0_GPDMA_Tx_Event  uart_lpc17xx.o
+    0x00001f08   0x00001f08   0x00000010   Code   RO          702    i.USART0_GetCapabilities  uart_lpc17xx.o
+    0x00001f18   0x00001f18   0x00000010   Code   RO          703    i.USART0_GetModemStatus  uart_lpc17xx.o
+    0x00001f28   0x00001f28   0x00000010   Code   RO          704    i.USART0_GetRxCount  uart_lpc17xx.o
+    0x00001f38   0x00001f38   0x00000010   Code   RO          705    i.USART0_GetStatus  uart_lpc17xx.o
+    0x00001f48   0x00001f48   0x00000010   Code   RO          706    i.USART0_GetTxCount  uart_lpc17xx.o
+    0x00001f58   0x00001f58   0x00000014   Code   RO          707    i.USART0_Initialize  uart_lpc17xx.o
+    0x00001f6c   0x00001f6c   0x00000014   Code   RO          708    i.USART0_PowerControl  uart_lpc17xx.o
+    0x00001f80   0x00001f80   0x00000018   Code   RO          709    i.USART0_Receive    uart_lpc17xx.o
+    0x00001f98   0x00001f98   0x00000018   Code   RO          710    i.USART0_Send       uart_lpc17xx.o
+    0x00001fb0   0x00001fb0   0x00000014   Code   RO          711    i.USART0_SetModemControl  uart_lpc17xx.o
+    0x00001fc4   0x00001fc4   0x0000001c   Code   RO          712    i.USART0_Transfer   uart_lpc17xx.o
+    0x00001fe0   0x00001fe0   0x00000010   Code   RO          713    i.USART0_Uninitialize  uart_lpc17xx.o
+    0x00001ff0   0x00001ff0   0x00000644   Code   RO          714    i.USART_Control     uart_lpc17xx.o
+    0x00002634   0x00002634   0x00000086   Code   RO          715    i.USART_GPDMA_Rx_Event  uart_lpc17xx.o
+    0x000026ba   0x000026ba   0x0000004a   Code   RO          716    i.USART_GPDMA_Tx_Event  uart_lpc17xx.o
+    0x00002704   0x00002704   0x00000006   Code   RO          717    i.USART_GetCapabilities  uart_lpc17xx.o
+    0x0000270a   0x0000270a   0x000000ec   Code   RO          718    i.USART_GetModemStatus  uart_lpc17xx.o
+    0x000027f6   0x000027f6   0x0000001c   Code   RO          719    i.USART_GetRxCount  uart_lpc17xx.o
+    0x00002812   0x00002812   0x000000bc   Code   RO          720    i.USART_GetStatus   uart_lpc17xx.o
+    0x000028ce   0x000028ce   0x0000001c   Code   RO          721    i.USART_GetTxCount  uart_lpc17xx.o
+    0x000028ea   0x000028ea   0x0000021a   Code   RO          722    i.USART_IRQHandler  uart_lpc17xx.o
+    0x00002b04   0x00002b04   0x000000fe   Code   RO          723    i.USART_Initialize  uart_lpc17xx.o
+    0x00002c02   0x00002c02   0x00000002   PAD
+    0x00002c04   0x00002c04   0x00000238   Code   RO          724    i.USART_PowerControl  uart_lpc17xx.o
+    0x00002e3c   0x00002e3c   0x00000110   Code   RO          725    i.USART_Receive     uart_lpc17xx.o
+    0x00002f4c   0x00002f4c   0x00000068   Code   RO          726    i.USART_RxLineIntHandler  uart_lpc17xx.o
+    0x00002fb4   0x00002fb4   0x0000019c   Code   RO          727    i.USART_Send        uart_lpc17xx.o
+    0x00003150   0x00003150   0x00000134   Code   RO          728    i.USART_SetBaudrate  uart_lpc17xx.o
+    0x00003284   0x00003284   0x000000a0   Code   RO          729    i.USART_SetModemControl  uart_lpc17xx.o
+    0x00003324   0x00003324   0x0000007a   Code   RO          730    i.USART_Transfer    uart_lpc17xx.o
+    0x0000339e   0x0000339e   0x000000e2   Code   RO          731    i.USART_Uninitialize  uart_lpc17xx.o
+    0x00003480   0x00003480   0x00000010   Code   RO          732    i.USARTx_GetVersion  uart_lpc17xx.o
+    0x00003490   0x00003490   0x0000001c   Code   RO          540    i.__NVIC_ClearPendingIRQ  ssp_lpc17xx.o
+    0x000034ac   0x000034ac   0x0000001c   Code   RO          733    i.__NVIC_ClearPendingIRQ  uart_lpc17xx.o
+    0x000034c8   0x000034c8   0x0000001c   Code   RO          919    i.__NVIC_ClearPendingIRQ  gpdma_lpc17xx.o
+    0x000034e4   0x000034e4   0x0000001a   Code   RO          277    i.__NVIC_EnableIRQ  main.o
+    0x000034fe   0x000034fe   0x0000001e   Code   RO          144    i.delay_ms          lcd_ili9325.o
+    0x0000351c   0x0000351c   0x00000068   Code   RO           27    i.displayTextire    lcd.o
+    0x00003584   0x00003584   0x00000058   Code   RO          479    i.initADC           adc.o
+    0x000035dc   0x000035dc   0x00000040   Code   RO           33    i.initLCD           lcd.o
+    0x0000361c   0x0000361c   0x000001d4   Code   RO          145    i.init_ILI9325      lcd_ili9325.o
+    0x000037f0   0x000037f0   0x00000028   Code   RO          354    i.lcdConfiguration  open1768_lcd.o
+    0x00003818   0x00003818   0x0000004c   Code   RO          355    i.lcdRead           open1768_lcd.o
+    0x00003864   0x00003864   0x00000038   Code   RO          356    i.lcdReadData       open1768_lcd.o
+    0x0000389c   0x0000389c   0x00000014   Code   RO          357    i.lcdReadReg        open1768_lcd.o
+    0x000038b0   0x000038b0   0x0000002c   Code   RO          358    i.lcdSend           open1768_lcd.o
+    0x000038dc   0x000038dc   0x00000038   Code   RO          360    i.lcdWriteData      open1768_lcd.o
+    0x00003914   0x00003914   0x00000040   Code   RO          361    i.lcdWriteIndex     open1768_lcd.o
+    0x00003954   0x00003954   0x00000014   Code   RO          362    i.lcdWriteReg       open1768_lcd.o
+    0x00003968   0x00003968   0x000000cc   Code   RO          278    i.main              main.o
+    0x00003a34   0x00003a34   0x00000012   Code   RO          420    i.wait_delay        open1768_lcd.o
+    0x00003a46   0x00003a46   0x00000002   PAD
+    0x00003a48   0x00003a48   0x00000080   Data   RO          542    .constdata          ssp_lpc17xx.o
+    0x00003ac8   0x00003ac8   0x000001d0   Data   RO          735    .constdata          uart_lpc17xx.o
+    0x00003c98   0x00003c98   0x00000028   Data   RO         1147    .constdata          c_w.l(_printf_hex_int.o)
+    0x00003cc0   0x00003cc0   0x00000030   Data   RO         1412    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x10000000, Load base: 0x000055ec, Size: 0x00000200, Max: 0x00008000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x10000000, Load base: 0x00003cf0, Size: 0x00000200, Max: 0x00008000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x10000000        -       0x00000200   Zero   RW         1028    STACK               startup_lpc17xx.o
+    0x10000000        -       0x00000200   Zero   RW         1085    STACK               startup_lpc17xx.o
 
 
-    Execution Region RW_IRAM2 (Exec base: 0x2007c000, Load base: 0x000055ec, Size: 0x00000190, Max: 0x00008000, ABSOLUTE)
+    Execution Region RW_IRAM2 (Exec base: 0x2007c000, Load base: 0x00003cf0, Size: 0x00000198, Max: 0x00008000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x2007c000   0x000055ec   0x00000019   Data   RW          278    .data               main.o
-    0x2007c019   0x00005605   0x00000003   PAD
-    0x2007c01c   0x00005608   0x00000008   Data   RW          486    .data               ssp_lpc17xx.o
-    0x2007c024   0x00005610   0x00000008   Data   RW          864    .data               gpdma_lpc17xx.o
-    0x2007c02c   0x00005618   0x00000004   Data   RW         1043    .data               system_lpc17xx.o
-    0x2007c030        -       0x0000002c   Zero   RW          484    .bss                ssp_lpc17xx.o
-    0x2007c05c        -       0x00000034   Zero   RW          677    .bss                uart_lpc17xx.o
-    0x2007c090        -       0x000000a0   Zero   RW          863    .bss                gpdma_lpc17xx.o
-    0x2007c130        -       0x00000060   Zero   RW         1229    .bss                c_w.l(libspace.o)
-    0x2007c190        -       0x00000000   Zero   RW         1029    HEAP                startup_lpc17xx.o
+    0x2007c000   0x00003cf0   0x0000000c   Data   RW          279    .data               main.o
+    0x2007c00c   0x00003cfc   0x00000011   Data   RW          440    .data               buttons.o
+    0x2007c01d   0x00003d0d   0x00000003   PAD
+    0x2007c020   0x00003d10   0x00000008   Data   RW          543    .data               ssp_lpc17xx.o
+    0x2007c028   0x00003d18   0x00000008   Data   RW          921    .data               gpdma_lpc17xx.o
+    0x2007c030   0x00003d20   0x00000004   Data   RW         1100    .data               system_lpc17xx.o
+    0x2007c034        -       0x0000002c   Zero   RW          541    .bss                ssp_lpc17xx.o
+    0x2007c060        -       0x00000034   Zero   RW          734    .bss                uart_lpc17xx.o
+    0x2007c094        -       0x000000a0   Zero   RW          920    .bss                gpdma_lpc17xx.o
+    0x2007c134        -       0x00000060   Zero   RW         1286    .bss                c_w.l(libspace.o)
+    0x2007c194   0x00003d24   0x00000004   PAD
+    0x2007c198        -       0x00000000   Zero   RW         1086    HEAP                startup_lpc17xx.o
 
 
 ==============================================================================
@@ -1473,24 +1394,26 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-        44          4       3040          0          0       2615   asciilib.o
+       140         26          0          0          0       1365   adc.o
+         0          0          0          0          0       1444   asciilib.o
+       112         64          0         17          0       1732   buttons.o
       1204         94          0          8        160       8206   gpdma_lpc17xx.o
         96          8          0          0          0       1202   gpio_lpc17xx.o
-       824         30          0          0          0      25487   lcd.o
-       498          0          0          0          0       1106   lcd_ili9325.o
-       950        230         20         25          0      33748   main.o
-       394         30          0          0          0       4640   open1768_lcd.o
+       168         26          0          0          0      21003   lcd.o
+       498          0          0          0          0       1102   lcd_ili9325.o
+       470        138          0         12          0      31343   main.o
+       394         30          0          0          0       4612   open1768_lcd.o
        252          6          0          0          0        804   pin_lpc17xx.o
       3912        106        128          8         44      52883   ssp_lpc17xx.o
-        64         26        204          0        512       1004   startup_lpc17xx.o
-       320         18          0          4          0        811   system_lpc17xx.o
+        64         26        204          0        512       1000   startup_lpc17xx.o
+       320         16          0          4          0        807   system_lpc17xx.o
        188         24          0          0          0      45778   uart.o
       5686        150        464          0         52      26727   uart_lpc17xx.o
 
     ----------------------------------------------------------------------
-     14440        726       3906         48        768     205011   Object Totals
+     13512        714        844         52        768     200008   Object Totals
          0          0         48          0          0          0   (incl. Generated)
-         8          0          2          3          0          0   (incl. Padding)
+         8          0          0          3          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1524,41 +1447,24 @@ Image component sizes
        238          0          0          0          0        100   lludivv7m.o
         40          6          0          0          0         84   noretval__2sprintf.o
         78          0          0          0          0         80   rt_memclr_w.o
-       138          0          0          0          0         68   rt_memcpy_v6.o
-       100          0          0          0          0         80   rt_memcpy_w.o
          2          0          0          0          0          0   rtexit.o
         10          0          0          0          0          0   rtexit2.o
         12          4          0          0          0         68   sys_exit.o
         74          0          0          0          0         80   sys_stackheap_outer.o
          2          0          0          0          0         68   use_no_semi.o
-        98          4          0          0          0         92   d2f.o
-       688        140          0          0          0        208   ddiv.o
-        46          0          0          0          0         68   dflt_clz.o
-       340         12          0          0          0        104   dmul.o
-       156          4          0          0          0         92   dnaninf.o
-        12          0          0          0          0         68   dretinf.o
-       430          8          0          0          0        168   faddsub_clz.o
-        24          0          0          0          0         68   fcmpi.o
-        62          4          0          0          0         84   ffixu.o
-        48          0          0          0          0         68   fflt_clz.o
-       104          4          0          0          0         84   fleqf.o
-       140          4          0          0          0         84   fnaninf.o
-        10          0          0          0          0         68   fretinf.o
-         0          0          0          0          0          0   usenofp.o
 
     ----------------------------------------------------------------------
-      3610        228         40          0         96       2768   Library Totals
-        22          0          0          0          0          0   (incl. Padding)
+      1204         48         40          0        100       1364   Library Totals
+        12          0          0          0          4          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
 
-      1430         48         40          0         96       1512   c_w.l
-      2158        180          0          0          0       1256   fz_ws.l
+      1192         48         40          0         96       1364   c_w.l
 
     ----------------------------------------------------------------------
-      3610        228         40          0         96       2768   Library Totals
+      1204         48         40          0        100       1364   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -1567,15 +1473,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     18050        954       3946         48        864     200599   Grand Totals
-     18050        954       3946         48        864     200599   ELF Image Totals
-     18050        954       3946         48          0          0   ROM Totals
+     14716        762        884         52        868     195284   Grand Totals
+     14716        762        884         52        868     195284   ELF Image Totals
+     14716        762        884         52          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                21996 (  21.48kB)
-    Total RW  Size (RW Data + ZI Data)               912 (   0.89kB)
-    Total ROM Size (Code + RO Data + RW Data)      22044 (  21.53kB)
+    Total RO  Size (Code + RO Data)                15600 (  15.23kB)
+    Total RW  Size (RW Data + ZI Data)               920 (   0.90kB)
+    Total ROM Size (Code + RO Data + RW Data)      15652 (  15.29kB)
 
 ==============================================================================
 
