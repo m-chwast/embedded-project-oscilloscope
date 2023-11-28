@@ -6,11 +6,12 @@
 #include "uart.h"
 #include "lcd.h"
 #include "LCD_ILI9325.h"
+#include "console.h"
 
 #define SysTimerClock (1000 * 100)	// 1ms sysTick (for 100MHz sys clock)
 
 void OnClikcTask(void);
-void UART_ReadTask(char* buff, int* buffsize);
+
 
 volatile uint32_t sysTicks = 0u;
 void SysTick_Handler(void)
@@ -147,7 +148,8 @@ int main()
 
 	while(1)
 	{	
-		UART_ReadTask(buff, &buffsize);
+		UART_ReadTask();
+		Console_Task();
 		OnClikcTask();
 	}
 }
@@ -178,20 +180,4 @@ void OnClikcTask()
 	}
 }
 
-void UART_ReadTask(char* buff, int* buffsize) {
-	if((LPC_UART0->LSR & (0b1 << 0)) == 1) {
-	char rbr = LPC_UART0->RBR;
-	if(rbr == '\r') {
-		buff[*buffsize] = '\r';
-		buff[*buffsize + 1] = '\n';
-		buff[*buffsize + 2] = 0;
-		UART_Send(buff);
-		*buffsize = 0;
-	}
-	else
-	{
-		buff[*buffsize] = rbr;
-	}
-		(*buffsize)++;
-	}
-}
+

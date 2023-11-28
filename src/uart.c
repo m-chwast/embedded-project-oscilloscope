@@ -3,14 +3,20 @@
 #include "PIN_LPC17xx.h"                // Keil::Device:PIN
 #include "RTE_Device.h"                 // Keil::Device:Startup
 #include "Driver_USART.h"               // ::CMSIS Driver:USART
+#include "uart.h"
 #include <string.h>
 #include <stdio.h>
+
+char UART_buffer[UART_BUFFER_SIZE];
+static unsigned currBuffSize;
+static bool msgReceived;
+
 
 void UART_Send(const char * txt) {
 	const char* c = txt;
 	while(*c != 0)
 	{
-		while (! ( LPC_UART0->LSR & (1 << 5) ) ); // THRE flag // delay
+		while (! ( LPC_UART0->LSR & (1 << 5) ) ) {} // THRE flag // delay
 		//for (int i = 0; i < 15 && c != '\0'; i++)
 		//{		
 			LPC_UART0->THR = *c;
@@ -72,6 +78,65 @@ void UART_Init() {
 	
 	UART_Send("Hello\r\n");
 }
+
+bool UART_ReadTask(void) {
+	if((LPC_UART0->LSR & (0b1 << 0)) == 0) 
+		return false;
+	
+	if(msgReceived == true)
+		return false;
+	
+	char rbr = LPC_UART0->RBR;
+	
+	//overflow check
+	if(currBuffSize + 3 >= UART_BUFFER_SIZE)
+	{
+		rbr = '\r';	//finish message immediately on overflow
+		UART_Send("UART Rx buff overflow\r\n");
+	}
+	
+	if(rbr == '\n')	//swap LF char to CR
+		rbr = '\r';
+	
+	if(rbr == '\r') 
+	{
+		UART_buffer[currBuffSize] = '\r';
+		UART_buffer[currBuffSize + 1] = '\n';
+		UART_buffer[currBuffSize + 2] = 0;
+		//UART_Send(UART_buffer);
+		currBuffSize = 0;
+		msgReceived = true;
+		return true; //msg received
+	}
+	else
+	{
+		UART_buffer[currBuffSize] = rbr;
+		currBuffSize++;
+		return false;
+	}
+}
+
+bool UART_IsMsgReady(void)
+{
+	return msgReceived;
+}
+
+bool UART_GetMessage(char * buff)
+{
+	if(msgReceived == false)
+	{
+		strcpy(buff, "\r\n");
+		return false;
+	}
+	
+	strcpy(buff, UART_buffer);
+	memset(UART_buffer, '\0', UART_BUFFER_SIZE);
+	msgReceived = false;	//accept characters again
+	return true;
+}
+
+
+//////////// obsolete
 
 void ARM_USART_eventFunc(uint32_t ev)
 {
