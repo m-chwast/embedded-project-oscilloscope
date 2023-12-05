@@ -336,7 +336,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define></Define>
+              <Define>_DEBUG</Define>
               <Undefine></Undefine>
               <IncludePath></IncludePath>
             </VariousControls>
@@ -383,16 +383,6 @@
           <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
-              <FileName>asciiLib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\asciiLib.c</FilePath>
-            </File>
-            <File>
-              <FileName>asciiLib.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\asciiLib.h</FilePath>
-            </File>
-            <File>
               <FileName>lcd.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\lcd.c</FilePath>
@@ -403,39 +393,9 @@
               <FilePath>.\src\lcd.h</FilePath>
             </File>
             <File>
-              <FileName>LCD_ILI9325.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\LCD_ILI9325.c</FilePath>
-            </File>
-            <File>
-              <FileName>LCD_ILI9325.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\LCD_ILI9325.h</FilePath>
-            </File>
-            <File>
-              <FileName>uart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\uart.c</FilePath>
-            </File>
-            <File>
-              <FileName>uart.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\uart.h</FilePath>
-            </File>
-            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\main.c</FilePath>
-            </File>
-            <File>
-              <FileName>Open1768_LCD.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\Open1768_LCD.c</FilePath>
-            </File>
-            <File>
-              <FileName>Open1768_LCD.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Open1768_LCD.h</FilePath>
             </File>
             <File>
               <FileName>buttons.c</FileName>
@@ -448,11 +408,6 @@
               <FilePath>.\src\core.h</FilePath>
             </File>
             <File>
-              <FileName>button.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\button.h</FilePath>
-            </File>
-            <File>
               <FileName>ADC.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\ADC.h</FilePath>
@@ -461,6 +416,61 @@
               <FileName>ADC.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\ADC.c</FilePath>
+            </File>
+            <File>
+              <FileName>buttons.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\buttons.h</FilePath>
+            </File>
+            <File>
+              <FileName>timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>uart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\uart.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Peryferia</GroupName>
+          <Files>
+            <File>
+              <FileName>Open1768_LCD.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Open1768_LCD.h</FilePath>
+            </File>
+            <File>
+              <FileName>Open1768_LCD.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\Open1768_LCD.c</FilePath>
+            </File>
+            <File>
+              <FileName>asciiLib.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\asciiLib.h</FilePath>
+            </File>
+            <File>
+              <FileName>asciiLib.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\asciiLib.c</FilePath>
+            </File>
+            <File>
+              <FileName>LCD_ILI9325.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\LCD_ILI9325.h</FilePath>
+            </File>
+            <File>
+              <FileName>LCD_ILI9325.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\LCD_ILI9325.c</FilePath>
             </File>
           </Files>
         </Group>

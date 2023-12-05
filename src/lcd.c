@@ -1,3 +1,5 @@
+#include "core.h"
+
 #include "Open1768_LCD.h"
 #include "LCD_ILI9325.h"
 
@@ -7,10 +9,18 @@
 #include "math.h"
 #include <stdio.h>
 
-extern volatile uint32_t sysTicks;
+static Rect wafesDis = { SIGNAL_MIN_X, SIGNAL_MIN_Y, SIGNAL_MAX_X, SIGNAL_MAX_Y, LCDRed };
+static Rect settingsDis = { SET_MIN_X, SET_MIN_Y, SET_MAX_X, SET_MAX_Y, LCDBlue };
 
-void delay(int s);
+static Coord OnSignal(int x, int y)
+{
+	return (Coord){ x + SIGNAL_MIN_X, y + SIGNAL_MIN_Y };
+}
 
+static Coord LineCoord(int LineNumber, int pos)
+{
+	return (Coord){ pos * SETTINGS_LETTER_SIZE, LineNumber * (SETTINGS_LINE_SIZE + 1) - 1 };
+}
 
 void initLCD()
 {
@@ -24,7 +34,41 @@ void initLCD()
 	
 	init_ILI9325();
 	
-	displayTextire(NULL);
+	drawBorders();
+}
+
+static void drawBorders(void)
+{
+	drawLine(wafesDis.l, wafesDis.b, wafesDis.l, wafesDis.t, wafesDis.c);
+	drawLine(wafesDis.l, wafesDis.t, wafesDis.r, wafesDis.t, wafesDis.c);
+	drawLine(wafesDis.r, wafesDis.t, wafesDis.r, wafesDis.b, wafesDis.c);
+	drawLine(wafesDis.r, wafesDis.b, wafesDis.l, wafesDis.b, wafesDis.c);
+	
+	drawLine(settingsDis.l, settingsDis.b, settingsDis.l, settingsDis.t, settingsDis.c);
+	drawLine(settingsDis.l, settingsDis.t, settingsDis.r, settingsDis.t, settingsDis.c);
+	drawLine(settingsDis.r, settingsDis.t, settingsDis.r, settingsDis.b, settingsDis.c);
+	drawLine(settingsDis.r, settingsDis.b, settingsDis.l, settingsDis.b, settingsDis.c);
+	
+
+	Coord coords[] = {
+		OnSignal(5, 5),
+		OnSignal(50, 100),
+		OnSignal(100, 75),
+		OnSignal(250, 40),
+		OnSignal(20, 60)
+	};
+	
+	drawLineStrip(5, coords, LCDGreen);
+	
+	Coord textCoord;
+	textCoord = LineCoord(1, 2);
+	drawText(textCoord.x, textCoord.y, "WTF", false);
+	textCoord = LineCoord(2, 2);
+	drawText(textCoord.x, textCoord.y, "WTF", false);
+	textCoord = LineCoord(3, 2);
+	drawText(textCoord.x, textCoord.y, "WTF", false);
+	textCoord = LineCoord(4, 2);
+	drawText(textCoord.x, textCoord.y, "WTF", false);
 }
 
 void drawBackGround(uint16_t backgroundColor)
@@ -41,6 +85,14 @@ uint16_t RGBto565(uint8_t r, uint8_t g, uint8_t b)
 {
 	uint16_t color = ((r >> 3 ) << 11) | ((g >> 2) << 5) | (b >> 3);
 	return color;
+}
+
+void drawPixel(int x, int y, uint16_t color)
+{
+	lcdWriteReg(ADRY_RAM, x);
+	lcdWriteReg(ADRX_RAM, y);
+	lcdWriteIndex(DATA_RAM);
+	lcdWriteData(color);
 }
 
 void drawRectangle(const Rect* rect)
@@ -64,130 +116,140 @@ void drawRectangle(const Rect* rect)
 	lcdWriteReg(VADRPOS_RAM_END, LCD_MAX_Y);
 }
 
-void drawLine(int xs, int ys, int xe, int ye, uint16_t color)
+void drawLineLegacy(int xs, int ys, int xe, int ye, uint16_t color)
 {
 	if (xe < xs)
-	{
-		int temp = xs;
-		xs = xe;
-		xe = temp;
-	}
+		swapInt(xs, xe);
 	if (ye < ys)
+		swapInt(ys, ye);
+	
+	float dy = ye - ys;
+	float dx = xe - xs;
+	if (dx == 0)
+		dx = 1;
+	if (dy == 0)
+		dy = 1;
+	
+	float a = dy * 1.0 / dx;
+	float y = 0;	
+	for(int x = 0; x < dx; x++) 
 	{
-		int temp = ys;
-		ys = ye;
-		ye = temp;
-	}
-	
-	//TODO vertical, horizontal lines
-	
-	float a = (ye - ys) * 1.0 / (xe - xs);
-	
-	float y = 0;
-	
-	for(int x = 0; x < xe - xs; x++) 
-	{
-		lcdWriteReg(ADRX_RAM, x + xs);
-		
+		lcdWriteReg(ADRY_RAM, x + xs);
 		for(int i = 0; i < a; i++) 
 		{
-			lcdWriteReg(ADRY_RAM, ys + y + i);
+			lcdWriteReg(ADRX_RAM, ys + y + i);
 			lcdWriteIndex(DATA_RAM);
 			lcdWriteData(color);
 		}
-		
 		y += a;
 	}
 }
 
-void drawText(int xPos, int yPos, const char* buff)
-{
-	uint8_t letter[16] = { 0 };
-	//lcdWriteReg(ADRY_RAM, 0);
-	//lcdWriteReg(ADRX_RAM, 0);
-	
-	int ys = yPos + 0;
-	int ye = ys  + 14;
-	//lcdWriteReg(VADRPOS_RAM_START, ys);
-	//lcdWriteReg(VADRPOS_RAM_END, ye);
-		
-	for (const char* c = buff; *c != '\0'; c++)
-	{
-		/*char s[4] = {0};
-		s[1] = '\r';
-		s[2] = '\n';
-		s[0] = *c;
-		UART_Send(s);*/
-		GetASCIICode(0, letter, *c);
-		int xs = xPos + (int)(c - buff) * 8;
-		int xe = xs + 7;
-		
-		int line = (xe + 1) / LCD_MAX_X;
-		static int oldLine;
-		
-		/*if (line > oldLine)
-		{
-			oldLine = line;	
-			ys = ys + 16;
-			ye = ys + 14;			
-			//lcdWriteReg(VADRPOS_RAM_START, ys);
-			//lcdWriteReg(VADRPOS_RAM_END, ye);
-		}*/
-		
-		//xs = line + xs % LCD_MAX_X;
-		//xe = xs + 7;
-		
-		//lcdWriteReg(HADRPOS_RAM_START, xs);
-		//lcdWriteReg(HADRPOS_RAM_END, xe);
-		//lcdWriteIndex(DATA_RAM);
-		for (int i = 0; i < sizeof(letter); i++)
-		{
-			lcdWriteReg(ADRX_RAM, xs);
-			lcdWriteReg(ADRY_RAM, ys + i);
-			lcdWriteIndex(DATA_RAM);
-			for(int8_t b = 7; b >= 0; b--)
-				lcdWriteData((letter[i] >> b) & 1 ? LCDBlack : LCDWhite);
-		}
-	}
-	//lcdWriteReg(HADRPOS_RAM_START, 0);
-	//lcdWriteReg(HADRPOS_RAM_END, LCD_MAX_X);
-	//lcdWriteReg(VADRPOS_RAM_START, 0);
-	//lcdWriteReg(VADRPOS_RAM_END, LCD_MAX_Y);
+void drawLine(int xs, int ys, int xe, int ye, uint16_t color)
+ {
+    int d, dx, dy, ai, bi, xi, yi;
+    int x = xs, y = ys;
+    if (xs < xe)
+    {
+        xi = 1;
+        dx = xe - xs;
+    }
+    else
+    {
+        xi = -1;
+        dx = xs - xe;
+    }
+    if (ys < ye)
+    {
+        yi = 1;
+        dy = ye - ys;
+    }
+    else
+    {
+        yi = -1;
+        dy = ys - ye;
+    }
+    drawPixel(x, y, color);
+    if (dx > dy)
+    {
+        ai = (dy - dx) * 2;
+        bi = dy * 2;
+        d = bi - dx;
+        while (x != xe)
+        {
+            if (d >= 0)
+            {
+                x += xi;
+                y += yi;
+                d += ai;
+            }
+            else
+            {
+                d += bi;
+                x += xi;
+            }
+            drawPixel(x, y, color);
+        }
+    }
+    else
+    {
+        ai = ( dx - dy ) * 2;
+        bi = dx * 2;
+        d = bi - dy;
+        while (y != ye)
+        {
+            if (d >= 0)
+            {
+                x += xi;
+                y += yi;
+                d += ai;
+            }
+            else
+            {
+                d += bi;
+                y += yi;
+            }
+            drawPixel(x, y, color);
+        }
+    }
 }
 
-void drawTextNoBg(int xPos, int yPos, const char* buff)
+void drawLineStrip(int n, Coord coords[n], uint16_t color)
+{
+	for (int i = 0; i < n - 1; i++)
+	{
+		drawLine(coords[i].x, coords[i].y, coords[i + 1].x, coords[i + 1].y, color);
+	}
+}	
+
+void drawText(int xPos, int yPos, const char* buff, bool drawBackGround)
 {
 	uint8_t letter[16] = { 0 };
-	//lcdWriteReg(ADRY_RAM, 0);
-	//lcdWriteReg(ADRX_RAM, 0);
-	
 	int ys = yPos + 0;
 		
 	for (const char* c = buff; *c != '\0'; c++)
 	{
 		GetASCIICode(0, letter, *c);
 		int xs = xPos + (int)(c - buff) * 8;
-		int xe = xs + 7;
 		
-		int line = (xe + 1) / LCD_MAX_X;
-		static int oldLine;
-		
-		for (int i = 0; i < sizeof(letter); i++)
+		for(int8_t b = 0; b < 8; b++)
 		{
-			lcdWriteReg(ADRY_RAM, ys + i);
-			
-			for(int8_t b = 7; b >= 0; b--) {
-				lcdWriteReg(ADRX_RAM, xs + (7 - b));
+			lcdWriteReg(ADRY_RAM, xs + 8 - b);
+			for (int i = sizeof(letter) - 1; i >= 0; i--)
+			{
+				lcdWriteReg(ADRX_RAM, ys - i);
 				lcdWriteIndex(DATA_RAM);
-				if((letter[i] >> b) & 1)
-					lcdWriteData(LCDBlack);
+				if (drawBackGround)
+					lcdWriteData((letter[i] >> b) & 1 ? LCDBlack : LCDWhite);
+				else
+					if ((letter[i] >> b) & 1)
+						lcdWriteData(LCDWhite);
 			}
 		}
 	}
 }
 
-
-void displayTextire(const void* data)
+void displayTexture(const void* data)
 {
 	uint32_t startTime = sysTicks;
 	
