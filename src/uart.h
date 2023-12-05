@@ -16,6 +16,6 @@ void UART_SendNum(int num);
 
 bool UART_ReadTask(void);
 bool UART_IsMsgReady(void);
-bool UART_GetMessage(char * buff);
+bool UART_GetMessage(char* buff);
 
 #endif

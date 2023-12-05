@@ -102,7 +102,7 @@ bool UART_ReadTask(void) {
 	{
 		UART_buffer[currBuffSize] = '\r';
 		UART_buffer[currBuffSize + 1] = '\n';
-		UART_buffer[currBuffSize + 2] = 0;
+		UART_buffer[currBuffSize + 2] = '\0';
 		//UART_Send(UART_buffer);
 		currBuffSize = 0;
 		msgReceived = true;

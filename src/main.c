@@ -5,6 +5,7 @@
 #include "RTE_Device.h"                 // Keil::Device:Startup
 #include <string.h>
 #include "uart.h"
+#include "console.h"
 #include "lcd.h"
 #include "buttons.h"
 #include "LCD_ILI9325.h"
@@ -83,6 +84,7 @@ int main()
 	
 	while (1)
 	{
-		//UART_Send("LOL\r\n");
+		UART_ReadTask();
+		Console_Task();
 	}
 }

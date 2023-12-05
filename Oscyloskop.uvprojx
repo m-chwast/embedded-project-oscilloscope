@@ -437,6 +437,16 @@
               <FileType>5</FileType>
               <FilePath>.\src\uart.h</FilePath>
             </File>
+            <File>
+              <FileName>console.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\console.c</FilePath>
+            </File>
+            <File>
+              <FileName>console.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\console.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
