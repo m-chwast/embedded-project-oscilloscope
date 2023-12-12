@@ -269,8 +269,8 @@ Section Cross References
     console.o(.text.Console_Task) refers to strstr.o(.text) for strstr
     console.o(.ARM.exidx.text.Console_Task) refers to console.o(.text.Console_Task) for [Anonymous Symbol]
     sigdisplay.o(.text.Display_Signal) refers to h1_alloc.o(.text) for malloc
-    sigdisplay.o(.text.Display_Signal) refers to sigdisplay.o(.bss.displayBuff) for displayBuff
     sigdisplay.o(.text.Display_Signal) refers to rt_memclr.o(.text) for __aeabi_memclr
+    sigdisplay.o(.text.Display_Signal) refers to sigdisplay.o(.bss.displayBuff) for displayBuff
     sigdisplay.o(.text.Display_Signal) refers to h1_free.o(.text) for free
     sigdisplay.o(.text.Display_Signal) refers to lcd.o(.text.RGBto565) for RGBto565
     sigdisplay.o(.text.Display_Signal) refers to lcd.o(.text.OnSignal) for OnSignal
@@ -839,7 +839,7 @@ Removing Unused input sections from the image.
     Removing console.o(.text), (0 bytes).
     Removing console.o(.ARM.exidx.text.Console_Task), (8 bytes).
     Removing sigdisplay.o(.text), (0 bytes).
-    Removing sigdisplay.o(.text.Display_Signal), (180 bytes).
+    Removing sigdisplay.o(.text.Display_Signal), (196 bytes).
     Removing sigdisplay.o(.ARM.exidx.text.Display_Signal), (8 bytes).
     Removing sigdisplay.o(.bss.displayBuff), (320 bytes).
     Removing open1768_lcd.o(.text), (0 bytes).
@@ -990,7 +990,7 @@ Removing Unused input sections from the image.
     Removing system_lpc17xx.o(.ARM.exidx.text.SystemInit), (8 bytes).
     Removing system_lpc17xx.o(.data.SystemCoreClock), (4 bytes).
 
-212 unused section(s) (total 9090 bytes) removed from the image.
+212 unused section(s) (total 9106 bytes) removed from the image.
 
 ==============================================================================
 

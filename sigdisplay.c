@@ -42,8 +42,10 @@ void Display_Signal(const uint16_t* data, uint32_t sampleNum, uint32_t sampleTri
 	
 	//TODO stuff
 	
-	for(uint32_t i = 0; i < sampleNum; i++) {
-		uint32_t dataIndex = (sampleTrig + i) % sampleNum;
+	uint32_t dataStartIndex = ((sampleNum / 2) + sampleTrig) % sampleNum;
+	
+	for(uint32_t i = 0; i < sampleNum; i++) {	
+		uint32_t dataIndex = (dataStartIndex + i) % sampleNum;
 		displayBuff[i] = scaledData[dataIndex];
 	}
 	for(uint32_t i = sampleNum; i < SIGNAL_WINDOW_W; i++) {
