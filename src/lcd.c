@@ -12,7 +12,7 @@
 static Rect wafesDis = { SIGNAL_MIN_X, SIGNAL_MIN_Y, SIGNAL_MAX_X, SIGNAL_MAX_Y, LCDRed };
 static Rect settingsDis = { SET_MIN_X, SET_MIN_Y, SET_MAX_X, SET_MAX_Y, LCDBlue };
 
-static Coord OnSignal(int x, int y)
+Coord OnSignal(int x, int y)
 {
 	return (Coord){ x + SIGNAL_MIN_X, y + SIGNAL_MIN_Y };
 }

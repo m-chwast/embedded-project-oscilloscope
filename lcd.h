@@ -49,7 +49,7 @@ void drawText(int xPos, int yPos, const char* buff, bool drawBackGround);
 void drawLine(int xs, int ys, int xe, int ye, uint16_t color);
 void drawLineStrip(int n, Coord coords[n], uint16_t color);
 
-static Coord OnSignal(int x, int y);
+Coord OnSignal(int x, int y);
 static Coord LineCoord(int LineNumber, int pos);
 
 #endif // __LCD__H_
